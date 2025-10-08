@@ -13,7 +13,7 @@
 <br>Today: We have a meeting and plan about information architecture of the application
 <br>Blockers: Nothing
 
-## Day 2 - Tuesday Oct 6
+## Day 2 - Tuesday Oct 7
 - Aiya 
 <br>Yesterday: Meeting & I finished design Home & Add pgae
 <br>Today: I am gonna start design Transaction & Categories page
