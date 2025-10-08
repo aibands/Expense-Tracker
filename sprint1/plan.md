@@ -15,7 +15,7 @@ End: 2025‑10‑12
 ## Selected Stories (from Product Backlog)
 | ID | Story | Priority | Estimate | Acceptance Criteria (summary) |
 |---|---|---|---|---|
-| 1 | As a user, I want to see my current expense, current income and my balance. | High | 3 hours | Item appears in list and persists on reload. |
+| 1 | As a user, I want to see my current expense, current income and my balance. | High | 3 | Item appears in list and persists on reload. |
 | 2 | As a user, I want to see and can edit my list of history transaction which is show date, time and categories of that expense/income. | High | 3 | Item appears in list and persists on reload. |
 | 3 | As a user, I want to add an expense/income (amount, category, date, description). | High | 3 | Item appears in list and persists on reload. |
 | 4 | As a user, I want to create categories for my expense and income and can set budget for each categories. | High | 3 | Item appears in list and persists on reload. |
