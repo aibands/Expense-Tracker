@@ -46,9 +46,20 @@
 <br>Blockers: Nothing
 
 ## Day 4
-- Dev A — Yesterday: ___ / Today: ___ / Blockers: ___
-- Dev B — Yesterday: ___ / Today: ___ / Blockers: ___
-- Dev C — Yesterday: ___ / Today: ___ / Blockers: ___
+- Aiya 
+<br>Yesterday: I finished the setting page
+<br>Today: I am gonna work on Notification page 
+<br>Blockers: I prepared for midterm test do I couldn't finish work as I planned
+
+- Daiki 
+<br>Yesterday: I build Transaction & Categories page
+<br>Today: I am gonna continue working on Transaction & Categories page
+<br>Blockers: I prepared for midterm test do I couldn't finish work as I planned
+
+- Gustavo 
+<br>Yesterday: I build Dashboard page & Add page
+<br>Today: I am gonna continue working on Dashboard page & Add page
+<br>Blockers: I prepared for midterm test do I couldn't finish work as I planned
 
 ## Day 5
 - Dev A — Yesterday: ___ / Today: ___ / Blockers: ___
