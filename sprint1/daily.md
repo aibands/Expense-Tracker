@@ -20,7 +20,7 @@
 <br>Blockers: Nothing
 
 - Daiki 
-Yesterday: Meeting
+<br>Yesterday: Meeting
 <br>Today: I am gonna start building Transaction & Categories page
 <br>Blockers: Nothing
 
@@ -36,7 +36,7 @@ Yesterday: Meeting
 <br>Blockers: Nothing
 
 - Daiki 
-Yesterday: I started building Transaction & Categories page
+<br>Yesterday: I started building Transaction & Categories page
 <br>Today: I am gonna continue working building Transaction & Categories page
 <br>Blockers: Nothing
 
