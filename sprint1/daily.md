@@ -45,7 +45,7 @@
 <br>Today: I am gonna continue working building Dashboard page & Add page
 <br>Blockers: Nothing
 
-## Day 4
+## Day 4 Thursday OCT 9
 - Aiya 
 <br>Yesterday: I finished the setting page
 <br>Today: I am gonna work on Notification page 
