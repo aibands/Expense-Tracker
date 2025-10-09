@@ -31,9 +31,9 @@ End: 2025‑10‑12
 | 2 | design Transaction page | Aiya | 1hour| Done |
 | 2 | building Transaction page | Daiki | 2hour| To‑Do |
 | 3 | design Add page | Aiya | 1hour| To‑Do |
-| 3 | building Add page | Daiki | 2hour| To‑Do |
+| 3 | building Add page | Gustavo | 2hour| To‑Do |
 | 4 | design Categories page | Aiya | 1hour| To‑Do |
-| 4 | building Categories page | Gustavo | 2hour| To‑Do |
+| 4 | building Categories page | Daiki | 2hour| To‑Do |
 | 5 | design Notification page | Aiya | 1hour| To‑Do |
 | 5 | building Notication page | Daiki | 2hour| To‑Do |
 | 6 | design setting page | Aiya | 1hour| To‑Do |
