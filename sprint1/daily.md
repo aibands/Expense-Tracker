@@ -21,18 +21,29 @@
 
 - Daiki 
 Yesterday: Meeting
-<br>Today: I am gonna start building Add page
+<br>Today: I am gonna start building Transaction & Categories page
 <br>Blockers: Nothing
 
-- Gustavo — 
+- Gustavo 
 <br>Yesterday: meeting
-<br>Today: I am gonna start building Dashboard page
+<br>Today: I am gonna start building Dashboard page & Add page
 <br>Blockers: Nothing
 
-## Day 3
-- Dev A — Yesterday: ___ / Today: ___ / Blockers: ___
-- Dev B — Yesterday: ___ / Today: ___ / Blockers: ___
-- Dev C — Yesterday: ___ / Today: ___ / Blockers: ___
+## Day 3 - Wednesday Oct 8
+- Aiya 
+<br>Yesterday: I finished design Transaction & Categories page
+<br>Today: I am gonna start design setting & Notification page
+<br>Blockers: Nothing
+
+- Daiki 
+Yesterday: I started building Transaction & Categories page
+<br>Today: I am gonna continue working building Transaction & Categories page
+<br>Blockers: Nothing
+
+- Gustavo 
+<br>Yesterday: I started building Dashboard page & Add page
+<br>Today: I am gonna continue working building Dashboard page & Add page
+<br>Blockers: Nothing
 
 ## Day 4
 - Dev A — Yesterday: ___ / Today: ___ / Blockers: ___
