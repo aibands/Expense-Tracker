@@ -61,7 +61,7 @@
 <br>Today: I am gonna continue working on Dashboard page & Add page
 <br>Blockers: I prepared for midterm test do I couldn't finish work as I planned
 
-## Day 5
+## Day 5 Friday OCT 10
 - Aiya 
 <br>Yesterday: I finished design notification page so I right now all the page is ready to code
 <br>Today: I am gonna work on create design library & component so it will be easy for team to develop and will jump to start help coding
