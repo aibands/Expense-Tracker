@@ -1,11 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>transaction</title>
+    <meta name="viewport" content="width=390, initial-scale=1.0">
+    <title>transaction (390px)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b1320;
+            --card: #20243d;
+            --teal-start: #1f6b74;
+            --teal-end: #2d8a9a;
+            --history: red;
+            --leftbt: #9598A9;
+        }
+
+        h1 {
+            font-family: 'poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .icon {
+            overflow: hidden;
+            background: white;
+            border-radius: 20%;
+            margin: 20px 10px;
+        }
+
+        .leftbox {
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .title {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+            line-height: 150%;
+            font-size: 14px;
+        }
+
+        .rightbox {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 300;
+            margin-left: auto;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        .detail {
+            font-size: 12px;
+            font-weight: 400;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <main>
+        <div class="container min-h-screen flex flex-col items-center gap-[30px]"
+            style="background:var(--bg); color:white; padding-top: 3rem;">
+
+            <!-- Title -->
+            <div class="flex flex-row mb-[1.5rem] relative w-[340px]">
+                <h1 class="text-[20px] font-bold mx-auto">Transaction</h1>
+                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="./img/PencilSimple.png" alt="">
+            </div>
+
+            <!-- Cards -->
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                    <div class="icon">
+                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                    </div>
+                    <div class="leftbox">
+                        <p class="title">Compass card</p>
+                        <p class="detail text-[var(--leftbt)]">Transportation</p>
+                    </div>
+                    <div class="rightbox">
+                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
+                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- nav bar -->
+        <nav class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 ">
+            <button class="flex flex-col items-center">
+                <img src="./img/House.png" alt="home" class="w-5 h-5">
+            </button>
+            <button class="flex flex-col items-center">
+                <img src="./img/Receiptopen.png" alt="note" class="w-5 h-5">
+            </button>
+            <button class="flex flex-col items-center">
+                <img src="./img/Plus.png" alt="plus" class="w-6 h-6">
+            </button>
+            <button class="flex flex-col items-center">
+                <img src="./img/SquaresFour.png" alt="grid" class="w-5 h-5">
+            </button>
+            <button class="flex flex-col items-center">
+                <img src="./img/GearSix.png" alt="settings" class="w-5 h-5">
+            </button>
+        </nav>
+
+
+
+    </main>
 </body>
+
 </html>
