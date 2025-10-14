@@ -6,12 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard Responsivo - Tailwind</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #0b1320;
-      --card: #101427;
+      --card: #20243d;
       --teal-start: #1f6b74;
       --teal-end: #2d8a9a;
+      --history: red;
+      --leftbt: #9598A9;
+      --plus: #528E2F;
+    }
+
+    h1 {
+      font-family: 'poppins', sans-serif;
+      font-weight: 700;
     }
   </style>
 </head>
@@ -138,10 +148,11 @@
           <div class="rounded-full bg-white/6 p-1 inline-flex">
             <button id="type-expense" class="px-4 py-2 rounded-full bg-[color:var(--teal-start)]">Expense</button>
             <button id="type-income" class="px-4 py-2 rounded-full text-gray-300">Income</button>
-          </div><br/>
+          </div><br />
 
           <label class="text-sm text-gray-400">Amount</label>
-          <input id="amount" type="number" placeholder="$0.00" class="w-full rounded-md p-3 bg-white/6 placeholder:text-gray-400 text-gray-600"/>
+          <input id="amount" type="number" placeholder="$0.00"
+            class="w-full rounded-md p-3 bg-white/6 placeholder:text-gray-400 text-gray-600" />
 
           <label class="text-sm text-gray-400">Category</label>
           <select class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="category">
@@ -151,12 +162,13 @@
           </select>
 
           <label class="text-sm text-gray-400">Date</label>
-          <input type="date" class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="date"/>
+          <input type="date" class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="date" />
 
           <label class="text-sm text-gray-400">Description (Optional)</label>
-          <input type="text" placeholder="Description" class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="description"/>
+          <input type="text" placeholder="Description" class="w-full rounded-md p-3 bg-white/6 text-gray-600"
+            id="description" />
 
-          <button id="save-btn" 
+          <button id="save-btn"
             class="w-full rounded-lg py-3 bg-[color:var(--teal-start)] hover:bg-[color:var(--teal-end)] font-medium">Add
             Transaction</button>
         </div>
