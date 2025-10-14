@@ -61,7 +61,18 @@
 <br>Today: I am gonna continue working on Dashboard page & Add page
 <br>Blockers: I prepared for midterm test do I couldn't finish work as I planned
 
-## Day 5
-- Dev A — Yesterday: ___ / Today: ___ / Blockers: ___
-- Dev B — Yesterday: ___ / Today: ___ / Blockers: ___
-- Dev C — Yesterday: ___ / Today: ___ / Blockers: ___
+## Day 5 Friday OCT 10
+- Aiya 
+<br>Yesterday: I finished design notification page so I right now all the page is ready to code
+<br>Today: I am gonna work on create design library & component so it will be easy for team to develop and will jump to start help coding
+<br>Blockers: nothing
+
+- Daiki 
+<br>Yesterday: I worked on Transaction & Categories page
+<br>Today: I am gonna continue working on Transaction & Categories page
+<br>Blockers: nothing
+
+- Gustavo 
+<br>Yesterday: I worked on Dashboard page & Add page all the html & css is done
+<br>Today: I am gonna create some fuction in JavaScript
+<br>Blockers: nothing

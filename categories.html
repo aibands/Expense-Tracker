@@ -1,11 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>categories</title>
+    <meta name="viewport" content="width=390, initial-scale=1.0">
+    <title>transaction (390px)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b1320;
+            --card: #20243d;
+            --teal-start: #1f6b74;
+            --teal-end: #2d8a9a;
+            --history: red;
+            --leftbt: #9598A9;
+            --rent: #2899F4;
+            --food: #EB84AF;
+            --transportation: #C38D5D;
+            --entertainment: rgb(234, 234, 31);
+            --gage: #D9D9D9;
+        }
+
+        h1 {
+            font-family: 'poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .pie {
+            background: var(--card);
+            margin: 10px 0;
+            
+            gap: 2px;
+        }
+
+        .piedetail {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .leftbox {
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .pietitle {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+            line-height: 16px;
+            font-size: 14px;
+            margin: 20px 0 0 0;
+            margin-left: -10px;
+        }
+
+        .title {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+            line-height: 150%;
+            font-size: 18px;
+        }
+
+        .rightbox {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 300;
+            margin-left: auto;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        .detail {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <main>
+        <div class="container min-h-screen flex flex-col items-center gap-[5px]"
+            style="background:var(--bg); color:white; padding-top: 3rem; padding-bottom: 5rem;">
+
+            <!-- header -->
+            <div class="flex flex-row mb-[1.5rem] relative w-[340px]">
+                <h1 class="text-[20px] font-bold mx-auto">Categories</h1>
+                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="./img/PencilSimple.png" alt="">
+            </div>
+
+            <!-- pie chart section -->
+            <div class="bg-gradient-to-br w-[350px] h-[220px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-[var(--card)] text-white rounded-lg flex flex-col pl-[1.5rem]">
+                    <p class="pietitle"> Monthly spending </p>
+                    <div class="flex flex-row items-center">
+                        <div class="pie">
+                            <img src="./img/Pie Chart.png" alt="pie" class="w-[150px] h-[150px]">
+                        </div>
+                        <div class="flex flex-col gap-[8px] m-[10px]">
+                            <p class="piedetail"><span class="text-[22px] text-[var(--rent)]">・</span> Rent 95%</p>
+                            <p class="piedetail"><span class="text-[22px] text-[var(--food)]">・</span> Food 3%</p>
+                            <p class="piedetail"><span class="text-[22px] text-[var(--transportation)]">・</span>
+                                Transportation 2%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- cards -->
+            <div class="flex flex-col gap-4 mt-4 w-[340px]">
+
+                <!-- Rent -->
+                <div class="bg-[var(--card)] rounded-2xl p-4 shadow-lg">
+                    <div class="flex justify-between items-center mb-2">
+                        <p class="text-[16px] font-medium">Rent</p>
+                        <p class="text-[14px] text-[var(--leftbt)]">$1000</p>
+                    </div>
+                    <p class="text-[18px] font-semibold">$0 <span class="font-normal">left</span></p>
+                    <div class="w-full h-[14px] bg-[var(--gage)] rounded-full mt-3">
+                        <div class="h-[14px] bg-[var(--rent)] rounded-full w-[100%]"></div>
+                    </div>
+                </div>
+
+                <!-- Food  -->
+                <div class="bg-[var(--card)] rounded-2xl p-4 shadow-lg">
+                    <div class="flex justify-between items-center mb-2">
+                        <p class="text-[16px] font-medium">Food</p>
+                        <p class="text-[14px] text-[var(--leftbt)]">budget $200</p>
+                    </div>
+                    <p class="text-[18px] font-semibold">$150 <span class="font-normal">left</span></p>
+                    <div class="w-full h-[14px] bg-[var(--gage)] rounded-full mt-3">
+                        <div class="h-[14px] bg-[var(--food)] rounded-full w-[75%]"></div>
+                    </div>
+                </div>
+
+                <!-- Transportation  -->
+                <div class="bg-[var(--card)] rounded-2xl p-4 shadow-lg">
+                    <div class="flex justify-between items-center mb-2">
+                        <p class="text-[16px] font-medium">Transportation</p>
+                        <p class="text-[14px] text-[var(--leftbt)]">budget $120</p>
+                    </div>
+                    <p class="text-[18px] font-semibold">$100 <span class="font-normal">left</span></p>
+                    <div class="w-full h-[14px] bg-[var(--gage)] rounded-full mt-3">
+                        <div class="h-[14px] bg-[var(--transportation)] rounded-full w-[85%]"></div>
+                    </div>
+                </div>
+                <!-- Entertainment  -->
+                <div class="bg-[var(--card)] rounded-2xl p-4 shadow-lg">
+                    <div class="flex justify-between items-center mb-2">
+                        <p class="text-[16px] font-medium">Entertainment</p>
+                        <p class="text-[14px] text-[var(--leftbt)]">budget $120</p>
+                    </div>
+                    <p class="text-[18px] font-semibold">$100 <span class="font-normal">left</span></p>
+                    <div class="w-full h-[14px] bg-[var(--gage)] rounded-full mt-3">
+                        <div class="h-[14px] bg-[var(--entertainment)] rounded-full w-[85%]"></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- nav bar -->
+            <nav
+                class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
+                <button class="flex flex-col items-center">
+                    <img src="./img/House.png" alt="home" class="w-5 h-5">
+                </button>
+                <button class="flex flex-col items-center">
+                    <img src="./img/Receipt.png" alt="note" class="w-5 h-5">
+                </button>
+                <button class="flex flex-col items-center">
+                    <img src="./img/Plus.png" alt="plus" class="w-6 h-6">
+                </button>
+                <button class="flex flex-col items-center">
+                    <img src="./img/SquaresFouropen.png" alt="grid" class="w-5 h-5">
+                </button>
+                <button class="flex flex-col items-center">
+                    <img src="./img/GearSix.png" alt="settings" class="w-5 h-5">
+                </button>
+            </nav>
+
+        </div>
+    </main>
 </body>
+
 </html>

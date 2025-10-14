@@ -27,16 +27,16 @@ End: 2025‑10‑12
 | Story ID | Task | Owner | Estimate | Status (To‑Do/In‑Progress/Review/Done) |
 |---|---|---|---|---|
 | 1 | design Homepage(dashboard) | Aiya | 1hour| Done |
-| 1 | building Homepage(dashboard) | Gustavo | 2hour | To-do |
+| 1 | building Homepage(dashboard) | Gustavo | 2hour | Done |
 | 2 | design Transaction page | Aiya | 1hour| Done |
-| 2 | building Transaction page | Daiki | 2hour| To‑Do |
-| 3 | design Add page | Aiya | 1hour| To‑Do |
-| 3 | building Add page | Gustavo | 2hour| To‑Do |
-| 4 | design Categories page | Aiya | 1hour| To‑Do |
-| 4 | building Categories page | Daiki | 2hour| To‑Do |
-| 5 | design Notification page | Aiya | 1hour| To‑Do |
+| 2 | building Transaction page | Daiki | 2hour| Done |
+| 3 | design Add page | Aiya | 1hour| Done |
+| 3 | building Add page | Gustavo | 2hour| Done |
+| 4 | design Categories page | Aiya | 1hour| Done |
+| 4 | building Categories page | Daiki | 2hour| Done |
+| 5 | design Notification page | Aiya | 1hour| Done |
 | 5 | building Notication page | Daiki | 2hour| To‑Do |
-| 6 | design setting page | Aiya | 1hour| To‑Do |
+| 6 | design setting page | Aiya | 1hour| Done |
 | 6 | building setting page | Aiya | 2hour| To‑Do |
 
 ## Definition of Done (reference)
