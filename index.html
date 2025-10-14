@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard Responsivo - Tailwind</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      --bg:#0b1320;
-      --card:#101427; 
-      --teal-start:#1f6b74;
-      --teal-end:#2d8a9a;
+    :root {
+      --bg: #0b1320;
+      --card: #101427;
+      --teal-start: #1f6b74;
+      --teal-end: #2d8a9a;
     }
   </style>
 </head>
+
 <body class="min-h-screen bg-[color:var(--bg)] text-white font-sans">
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -27,8 +29,10 @@
         </div>
       </div>
       <button class="p-2 rounded-full bg-white/5 hover:bg-white/10">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
         </svg>
       </button>
     </header>
@@ -36,7 +40,8 @@
     <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <section class="lg:col-span-2">
-        <div class="rounded-xl bg-gradient-to-r from-[color:var(--teal-start)] to-[color:var(--teal-end)] p-6 shadow-md mb-4">
+        <div
+          class="rounded-xl bg-gradient-to-r from-[color:var(--teal-start)] to-[color:var(--teal-end)] p-6 shadow-md mb-4">
           <p class="text-sm text-white/90">Monthly Balance</p>
           <h2 class="text-3xl font-extrabold mt-2">$X</h2>
         </div>
@@ -53,7 +58,8 @@
         </div>
 
         <div class="rounded-full bg-white/6 p-1 inline-flex items-center mb-4">
-          <button id="btn-week" class="px-6 py-2 rounded-full bg-[color:var(--teal-start)] text-white font-medium">Week</button>
+          <button id="btn-week"
+            class="px-6 py-2 rounded-full bg-[color:var(--teal-start)] text-white font-medium">Week</button>
           <button id="btn-month" class="px-6 py-2 rounded-full text-gray-300">Month</button>
           <button id="btn-year" class="px-6 py-2 rounded-full text-gray-300">Year</button>
         </div>
@@ -78,16 +84,23 @@
       <aside class="space-y-6">
         <div class="rounded-xl bg-[color:var(--card)] p-6">
           <p class="text-sm text-gray-400">Quick actions</p>
-          <button id="open-form" class="mt-4 w-full rounded-lg py-3 bg-[color:var(--teal-start)] hover:bg-[color:var(--teal-end)] font-medium">Add Transaction</button>
+          <button id="open-form"
+            class="mt-4 w-full rounded-lg py-3 bg-[color:var(--teal-start)] hover:bg-[color:var(--teal-end)] font-medium">Add
+            Transaction</button>
         </div>
 
         <nav class="rounded-xl bg-[color:var(--card)] p-4 flex justify-around">
           <button class="flex flex-col items-center text-gray-300">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6"/></svg>
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
+            </svg>
             <span class="text-xs mt-1">Home</span>
           </button>
           <button class="flex flex-col items-center text-gray-300">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8M8 11h8m-7 4h6"/></svg>
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8M8 11h8m-7 4h6" />
+            </svg>
             <span class="text-xs mt-1">Notes</span>
           </button>
           <button id="plus-mobile" class="flex flex-col items-center text-gray-300">
@@ -95,11 +108,15 @@
             <span class="text-xs mt-1">Add</span>
           </button>
           <button class="flex flex-col items-center text-gray-300">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
             <span class="text-xs mt-1">Grid</span>
           </button>
-          <button class="flex flex-col items-center text-gray-300">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 8v4m8-8h-4M4 12H0"/></svg>
+          <button class="flex flex-col items-center text-gray-300" id="openSettings">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 8v4m8-8h-4M4 12H0" />
+            </svg>
             <span class="text-xs mt-1">Settings</span>
           </button>
         </nav>
@@ -116,62 +133,104 @@
         <button id="close-modal" class="text-gray-300">✕</button>
       </div>
 
-      <div class="bg-[color:var(--card)] rounded-lg p-4 space-y-3">
-        <div class="rounded-full bg-white/6 p-1 inline-flex">
-          <button id="type-expense" class="px-4 py-2 rounded-full bg-[color:var(--teal-start)]">Expense</button>
-          <button id="type-income" class="px-4 py-2 rounded-full text-gray-300">Income</button>
+      <form action="#" id="transaction-form">
+        <div class="bg-[color:var(--card)] rounded-lg p-4 space-y-3">
+          <div class="rounded-full bg-white/6 p-1 inline-flex">
+            <button id="type-expense" class="px-4 py-2 rounded-full bg-[color:var(--teal-start)]">Expense</button>
+            <button id="type-income" class="px-4 py-2 rounded-full text-gray-300">Income</button>
+          </div><br/>
+
+          <label class="text-sm text-gray-400">Amount</label>
+          <input id="amount" type="number" placeholder="$0.00" class="w-full rounded-md p-3 bg-white/6 placeholder:text-gray-400 text-gray-600"/>
+
+          <label class="text-sm text-gray-400">Category</label>
+          <select class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="category">
+            <option>Rent</option>
+            <option>Food</option>
+            <option>Transport</option>
+          </select>
+
+          <label class="text-sm text-gray-400">Date</label>
+          <input type="date" class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="date"/>
+
+          <label class="text-sm text-gray-400">Description (Optional)</label>
+          <input type="text" placeholder="Description" class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="description"/>
+
+          <button id="save-btn" 
+            class="w-full rounded-lg py-3 bg-[color:var(--teal-start)] hover:bg-[color:var(--teal-end)] font-medium">Add
+            Transaction</button>
         </div>
+      </form>
+    </div>
+  </div>
 
-        <label class="text-sm text-gray-400">Amount</label>
-        <input type="number" placeholder="$0.00" class="w-full rounded-md p-3 bg-white/6 placeholder:text-gray-400 text-gray-600"/>
-
-        <label class="text-sm text-gray-400">Category</label>
-        <select class="w-full rounded-md p-3 bg-white/6 text-gray-600">
-          <option>Rent</option>
-          <option>Food</option>
-          <option>Transport</option>
-        </select>
-
-        <label class="text-sm text-gray-400">Date</label>
-        <input type="date" class="w-full rounded-md p-3 bg-white/6 text-gray-600"/>
-
-        <label class="text-sm text-gray-400">Description (Optional)</label>
-        <input type="text" placeholder="Description" class="w-full rounded-md p-3 bg-white/6 text-gray-600"/>
-
-        <button class="w-full rounded-lg py-3 bg-[color:var(--teal-start)] hover:bg-[color:var(--teal-end)] font-medium">Add Transaction</button>
+  <div id="settingsPage" class="hidden fixed inset-0 bg-[#0e1320] overflow-y-auto p-6">
+    <h2 class="text-center font-bold text-lg mb-6">Setting</h2>
+    <div>
+      <p class="text-gray-400 mb-2">General</p>
+      <div class="space-y-2">
+        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Profile</span> ➜</div>
+        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Appearance</span> <span
+            class="text-gray-400">System</span></div>
+        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Notifications</span> <input type="checkbox"
+            class="accent-[#114e63]" /></div>
+        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Currency</span> <span
+            class="text-gray-400">CAD</span></div>
+        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Display cents</span> <input type="checkbox"
+            checked class="accent-[#114e63]" /></div>
       </div>
+
+
+      <p class="text-gray-400 mt-6 mb-2">Data</p>
+      <div class="space-y-2">
+        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Export data</span> ➜</div>
+        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Clear data</span> ➜</div>
+      </div>
+
+      <button id="closeSettings" class="w-full mt-6 bg-[#114e63] py-2 rounded-md">Back</button>
     </div>
   </div>
 
   <script>
     const modal = document.getElementById('modal')
-    document.getElementById('open-form').addEventListener('click', ()=> modal.classList.remove('hidden'))
-    document.getElementById('close-modal').addEventListener('click', ()=> modal.classList.add('hidden'))
-    document.getElementById('plus-mobile').addEventListener('click', ()=> modal.classList.remove('hidden'))
+    const settingsPage = document.getElementById('settingsPage')
+    const closeSettings = document.getElementById('closeSettings')
+    const openSettings = document.getElementById('openSettings')
+    document.getElementById('open-form').addEventListener('click', () => modal.classList.remove('hidden'))
+    document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'))
+    document.getElementById('plus-mobile').addEventListener('click', () => modal.classList.remove('hidden'))
 
-    document.getElementById('btn-week').addEventListener('click', (e)=> setActive(e.target))
-    document.getElementById('btn-month').addEventListener('click', (e)=> setActive(e.target))
-    document.getElementById('btn-year').addEventListener('click', (e)=> setActive(e.target))
-    function setActive(el){
-      document.querySelectorAll('.rounded-full.bg-white\/6 button, .rounded-full.bg-white\/6 .active').forEach(b=>{
-        b.classList.remove('bg-[color:var(--teal-start)]','text-white')
+    document.getElementById('btn-week').addEventListener('click', (e) => setActive(e.target))
+    document.getElementById('btn-month').addEventListener('click', (e) => setActive(e.target))
+    document.getElementById('btn-year').addEventListener('click', (e) => setActive(e.target))
+    function setActive(el) {
+      document.querySelectorAll('.rounded-full.bg-white\/6 button, .rounded-full.bg-white\/6 .active').forEach(b => {
+        b.classList.remove('bg-[color:var(--teal-start)]', 'text-white')
         b.classList.add('text-gray-300')
       })
-      el.classList.add('bg-[color:var(--teal-start)]','text-white')
+      el.classList.add('bg-[color:var(--teal-start)]', 'text-white')
       el.classList.remove('text-gray-300')
     }
 
     const typeExpense = document.getElementById('type-expense')
     const typeIncome = document.getElementById('type-income')
-    typeExpense.addEventListener('click', ()=>{
+    typeExpense.addEventListener('click', () => {
       typeExpense.classList.add('bg-[color:var(--teal-start)]'); typeIncome.classList.remove('bg-[color:var(--teal-start)]'); typeIncome.classList.add('text-gray-300')
     })
-    typeIncome.addEventListener('click', ()=>{
-      typeIncome.classList.add('bg-[color:var(--teal-start)]','text-white'); typeExpense.classList.remove('bg-[color:var(--teal-start)]'); typeExpense.classList.add('text-gray-300')
+    typeIncome.addEventListener('click', () => {
+      typeIncome.classList.add('bg-[color:var(--teal-start)]', 'text-white'); typeExpense.classList.remove('bg-[color:var(--teal-start)]'); typeExpense.classList.add('text-gray-300')
     })
 
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) modal.classList.add('hidden') })
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden') })
+    openSettings.addEventListener('click', () => {
+      settingsPage.classList.remove('hidden')
+    })
+    closeSettings.addEventListener('click', () => {
+      settingsPage.classList.add('hidden')
+    })
   </script>
+  <script src="JS/main.js"></script>
 
 </body>
+
 </html>
