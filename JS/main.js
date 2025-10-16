@@ -1,50 +1,73 @@
+function updateMainPage() {
+    const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    let balance = 0;
+    let income = 0;
+    let expense = 0;
+    transactions.forEach(tx => {
+        if (tx.type === 'income') {
+            balance += tx.amount;
+            income += tx.amount;
+        } else if (tx.type === 'expense') {
+            balance -= tx.amount;
+            expense += tx.amount;
+        }
+    });
+
+    $('#m-balance').text(balance.toFixed(2));
+    $('#m-income').text(income.toFixed(2));
+    $('#m-expense').text(expense.toFixed(2));
+    console.log(transactions);
+}
+
 function saveTransaction() {
 
-    document.querySelector("#transaction-form").addEventListener("submit", (e) => { // form submit
-        e.preventDefault();
-        const type = document.getElementById('type-expense').classList.contains('bg-[color:var(--teal-start)]') ? 'expense' : 'income';
-        console.log('Transaction type:', type);
-        const amountInput = document.getElementById(`amount`);
-        const descriptionInput = document.getElementById(`description`);
-        const dateInput = document.getElementById(`date`);
+    const type = $('#type-expense').hasClass('bg-[color:var(--teal-start)]') ? 'expense' : 'income';
+    // bg-[color:var(--teal-start)] == active
+    const amount = parseFloat($('#amount').val());
+    const description = $('#description').val().trim();
+    const category = $('#category').val();
+    const date = $('#date').val();
 
-        const amount = parseFloat(amountInput.value);
-        const description = descriptionInput.value.trim();
-        const date = dateInput.value;
+    if(!amount){
+        return 0;
+    }
 
-        console.log('Amount:', amount);
-        console.log('Description:', description);
-        console.log('Date:', date);
-        if (!amount || !description || !date) {
-            alert('Please fill in all fields.');
-            return;
-        }
+    const transaction = {
+        id: Date.now(),
+        type,
+        amount,
+        description,
+        category,
+        date
+    };
 
-        const transaction = {
-            id: Date.now(),
-            type,
-            amount,
-            description,
-            date
-        };
 
-        const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    transactions.push(transaction);
+    localStorage.setItem('transactions', JSON.stringify(transactions));
 
-        transactions.push(transaction);
+    $('#amount').val('');
+    $('#description').val('');
+    $('#date').val('');
 
-        localStorage.setItem('transactions', JSON.stringify(transactions));
+    updateMainPage();
+    listTransactions();
+    window.location.href = "transaction.html";
 
-        amountInput.value = '';
-        descriptionInput.value = '';
-        dateInput.value = '';
-    });
 }
 
 function listTransactions() {
     const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
-    console.log('Transactions:', transactions);
     return transactions;
 }
 
-document.getElementById('save-btn')?.addEventListener('click', () => saveTransaction());
-listTransactions();
+$(document).ready(function () {
+    updateMainPage();
+    listTransactions();
+});
+
+
+$("#transaction-form").on("submit", function (e) {
+    e.preventDefault();
+    saveTransaction();
+});

@@ -31,3 +31,19 @@
 <br>Yesterday: We had a planning yesterday
 <br>Today: Today I will work on logic monthly balance, incomes and expenses
 <br>Blockers: Nothing
+
+## Day 3 - Tuesday Oct 15
+- Aiya:
+<br>Yesterday: I builded setting page
+<br>Today: Today I will work on navigation page and it should be done
+<br>Blockers: Nothing
+
+- Daiki: 
+<br>Yesterday: I made basic HTML and CSS pages
+<br>Today: I will work on logic to display transactions based on local storage
+<br>Blockers: Nothing
+
+- Gustavo 
+<br>Yesterday: I couldn't finish all logics
+<br>Today: Today I will continue working on logics
+<br>Blockers: I had tech issues with my computer
