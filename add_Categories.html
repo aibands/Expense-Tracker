@@ -24,14 +24,15 @@
 <body>
     <!-- Title -->
     <div class="flex flex-row pt-10 px-10">
-        <img class="w-[24px] h-[24px] cursor-pointer" src="./logo/ArrowLeft.svg" alt="">
+        <a href="./categories.html"><img class="w-[24px] h-[24px] cursor-pointer" src="./logo/ArrowLeft.svg" alt=""></a>
         <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Add categories</h1>
     </div>
     
     <!-- body -->
      <div class="flex flex-col items-center justify-center px-8">
-        <div class="flex items-center justify-center w-20 h-20 rounded-lg bg-[var(--white)] my-10 emoji-box">
-            <img src="./logo/emoji.svg" class=" w-15 h-15 object-contain">
+        <div class="flex items-center justify-center w-20 h-20 rounded-lg bg-[var(--white)] my-10 emoji-box cursor-pointer relative">
+            <span class="text-3xl emoji-icon">😀</span>
+            <input type="text" id="emojiInput" maxlength="2" class="absolute top-0 left-0 w-full h-full text-center text-3xl border-none outline-none bg-transparent hidden">
         </div>
 
         <form class="w-full flex flex-col gap-2">
@@ -91,6 +92,73 @@
             input.removeClass("text-[var(--bg)]");
         }
     });
+
+    // for change emoji
+    $(document).ready(function() {
+        $(".emoji-box").click(function() {
+            const input = $("#emojiInput");
+            const emojiSpan = $(this).find(".emoji-icon");
+            input.val(emojiSpan.text()).removeClass("hidden").focus();
+            emojiSpan.hide(); // hide old emoji when user typing
+        });
+
+        $("#emojiInput").on("input", function() {
+            const val = $(this).val();
+            if (val.length > 0) {
+                $(".emoji-icon").text(val);
+            }
+        });
+
+        $("#emojiInput").blur(function() {
+            // When done typing, hide input and show emoji
+            $(this).addClass("hidden");
+            $(".emoji-icon").show();
+        });
+    });
+
+    // create local storage to add categories
+    $(document).ready(function() {
+        $(".circle").click(function(e){
+            $(".circle").removeClass("border-white"); 
+            $(e.currentTarget).addClass("border-white"); 
+            const bgColor = $(e.currentTarget).css("background-color");
+            $(".emoji-box").css("background-color", bgColor);
+        });
+
+        // emoji input (in-place)
+        $(".emoji-box").click(function() {
+            const input = $("#emojiInput");
+            const emojiSpan = $(this).find(".emoji-icon");
+            input.val(emojiSpan.text()).removeClass("hidden").focus();
+            emojiSpan.hide();
+        });
+        $("#emojiInput").on("input", function() {
+            const val = $(this).val();
+            if (val.length > 0) $(".emoji-icon").text(val);
+        });
+        $("#emojiInput").blur(function() {
+            $(this).addClass("hidden");
+            $(".emoji-icon").show();
+        });
+
+        // Add categories button
+        $("button").click(function() {
+            const newCategory = {
+                emoji: $(".emoji-icon").text(),
+                name: $(".input_box").eq(0).val(),
+                budget: $(".input_box").eq(1).val(),
+                color: $(".circle.border-white").css("background-color"),
+                spent: 0
+            };
+
+            let categories = JSON.parse(localStorage.getItem("categories") || "[]");
+            categories.push(newCategory);
+            localStorage.setItem("categories", JSON.stringify(categories));
+
+            window.location.href = "./categories.html";
+        });
+    });
+
 </script>
 </body>
 </html>
