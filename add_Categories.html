@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+      --bg:#0F1427;
+      --card:#20243D; 
+      --white:#f8f8f8;
+      --grey: #A6A6A6;
+      --lightgrey: #DADADA;
+      --check: #1B546C;
+      --check_circle: #0E384A;
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Title -->
+    <div class="flex flex-row pt-10 px-10">
+        <img class="w-[24px] h-[24px] cursor-pointer" src="./logo/ArrowLeft.svg" alt="">
+        <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Add categories</h1>
+    </div>
+    
+    <!-- body -->
+     <div class="flex flex-col items-center justify-center px-8">
+        <div class="flex items-center justify-center w-20 h-20 rounded-lg bg-[var(--white)] my-10 emoji-box">
+            <img src="./logo/emoji.svg" class=" w-15 h-15 object-contain">
+        </div>
+
+        <form class="w-full flex flex-col gap-2">
+            <label class="text-[14px] text-[var(--white)]">Categories</label>
+            <input type="text" class="input_box w-full text-[12px] rounded-lg p-4 bg-white/6 text-[#D9D9D9]" placeholder="Add categories name">
+        </form>
+
+        <form class="w-full flex flex-col gap-2 mt-6">
+            <label class="text-[14px] text-[var(--white)]">Budget</label>
+            <div class="relative w-full">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#D9D9D9] text-[12px]">$</span>
+                <input type="text" class="input_box w-full pl-8 p-4 rounded-lg bg-white/6 text-[#D9D9D9] text-[12px]" placeholder="0.00">
+            </div>        
+        </form>
+
+        <div class="flex justify-start w-full mt-6 mb-2">
+            <p class="text-[14px] text-[var(--white)]">Color</p>
+        </div>    
+        
+        <div class="flex flex-wrap justify-between w-full mb-3">
+            <div class="circle w-10 h-10 rounded-full bg-[#080808] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#412114] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#C38D5D] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#D25D3F] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#F6D24A] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#144F48] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#377730] cursor-pointer border-2 border-transparent"></div>
+        </div>
+        <div class="flex flex-wrap justify-between w-full">
+            <div class="circle w-10 h-10 rounded-full bg-[#5CAB9B] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#354E9F] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#2899F4] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#C29BEE] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#EB84AF] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#C22F6C] cursor-pointer border-2 border-transparent"></div>
+            <div class="circle w-10 h-10 rounded-full bg-[#DF7878] cursor-pointer border-2 border-transparent"></div>
+        </div>
+
+        <button class="bg-[var(--check)] text-[var(--white)] p-3 w-full rounded-lg mt-40">Add categories</button>
+     </div>
+
+<script>
+    // selected color + change emoji box
+    $(".circle").click(function(e){
+        $(".circle").removeClass("border-white"); 
+        $(e.currentTarget).addClass("border-white"); 
+        const bgColor = $(e.currentTarget).css("background-color");
+        $(".emoji-box").css("background-color",bgColor);
+    });
+
+    // input change color text
+    $(".input_box").on("input", function(e) {
+        const input = $(e.target); 
+        if (input.val().length > 0) {
+            input.addClass("text-[var(--bg)]");
+        } else {
+            input.removeClass("text-[var(--bg)]");
+        }
+    });
+</script>
+</body>
+</html>

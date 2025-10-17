@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>categories/selected</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+      --bg:#0F1427;
+      --card:#20243D; 
+      --white:#f8f8f8;
+      --grey: #A6A6A6;
+      --lightgrey: #DADADA;
+      --check: #1B546C;
+      --check_circle: #0E384A;
+      --food: #EB84AF;
+      --red:#E03B12;
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Title -->
+    <div class="flex flex-row p-10">
+        <img class="w-[24px] h-[24px] cursor-pointer" src="./logo/ArrowLeft.svg" alt="">
+        <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Food</h1>
+        <img class="w-[24px] h-[24px] cursor-pointer mx-2" src="./logo/pencil.svg" alt="">
+        <img class="w-[24px] h-[24px] cursor-pointer " src="./logo/Trash.svg" alt="">
+    </div>
+
+    <!-- body -->
+    <div class="px-10">
+        <div>
+            <p class="text-[14px] font-bold text-[var(--white)]">$150 left</span></p>
+            <div class="w-full h-[14px] bg-[var(--white)] rounded-full mt-1">
+                <div class="h-[14px] bg-[var(--food)] rounded-full w-[75%]"></div>
+            </div>
+        </div>
+        <p class="text-[12px] font-regular text-[var(--grey)] text-right mt-1">budget $200</p>
+        <div class="flex flex-row justify-between mt-6">
+            <p class="text-[14px] font-regular text-[var(--white)]">Overall spending</p>
+            <p class="text-[14px] font-regular text-[var(--white)]">$50</p>
+        </div>
+        
+    <!-- transaction list -->
+        <div class="flex bg-[var(--card)] rounded-lg p-4 items-center justify-between mt-2">
+            <div class="flex gap-2 items-center justify-center">
+                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--food)]">
+                    <p class="text-[20px]">🥩</p>
+                </div>
+                <div>
+                    <p class="text-[var(--white)] text-[14px]">FreshSlice</p>
+                    <p class="text-[var(--grey)] text-[12px]">Food</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end items-end">
+                <p class="text-[var(--red)] text-[14px]">-$3.00</p>
+                <p class="text-[var(--grey)] text-[12px]">Today, 12:36 pm</p>
+            </div>
+        </div>
+        <div class="flex bg-[var(--card)] rounded-lg p-4 items-center justify-between mt-2">
+            <div class="flex gap-2 items-center justify-center">
+                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--food)]">
+                    <p class="text-[20px]">🥩</p>
+                </div>
+                <div>
+                    <p class="text-[var(--white)] text-[14px]">Mc’Donald</p>
+                    <p class="text-[var(--grey)] text-[12px]">Food</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end items-end">
+                <p class="text-[var(--red)] text-[14px]">-$15.99</p>
+                <p class="text-[var(--grey)] text-[12px]">Oct 6, 3:40 pm</p>
+            </div>
+        </div>
+        <div class="flex bg-[var(--card)] rounded-lg p-4 items-center justify-between mt-2">
+            <div class="flex gap-2 items-center justify-center">
+                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-[var(--food)]">
+                    <p class="text-[20px]">🥩</p>
+                </div>
+                <div>
+                    <p class="text-[var(--white)] text-[14px]">KFC</p>
+                    <p class="text-[var(--grey)] text-[12px]">Food</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end items-end">
+                <p class="text-[var(--red)] text-[14px]">-$10.99</p>
+                <p class="text-[var(--grey)] text-[12px]">Oct 1, 5:40 pm</p>
+            </div>
+        </div>
+    </div>
+
