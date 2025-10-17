@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard Responsivo - Tailwind</title>
+  <title>Expense Tracker</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -34,14 +34,14 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
     <header class="flex items-center justify-between mb-6">
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-4" id="home">
         <div class="w-12 h-12 bg-white/10 rounded-full"></div>
         <div>
           <p class="text-sm text-gray-300">Hello</p>
           <p class="font-semibold text-lg">Daiki</p>
         </div>
       </div>
-      <button class="p-2 rounded-full bg-white/5 hover:bg-white/10">
+      <button class="p-2 rounded-full bg-white/5 hover:bg-white/10" id="notification">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24"
           stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -211,8 +211,7 @@
     const settingsPage = document.getElementById('settingsPage')
     const closeSettings = document.getElementById('closeSettings')
     const openSettings = document.getElementById('openSettings')
-    document.getElementById('open-form').addEventListener('click', () => modal.classList.remove('hidden'))
-    document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'))
+    //document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'))
     document.getElementById('plus-mobile').addEventListener('click', () => modal.classList.remove('hidden'))
 
     document.getElementById('btn-week').addEventListener('click', (e) => setActive(e.target))
@@ -243,6 +242,11 @@
     closeSettings.addEventListener('click', () => {
       settingsPage.classList.add('hidden')
     })
+
+    document.getElementById('open-form').addEventListener('click', () => window.location.href = "saveTransaction.html");
+    document.getElementById('notification').addEventListener('click', () => window.location.href = "notification.html");
+    document.getElementById('home').addEventListener('click', () => window.location.href = "index.html");
+        
   </script>
   <script src="JS/main.js"></script>
 
