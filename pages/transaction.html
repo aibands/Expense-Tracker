@@ -16,7 +16,7 @@
             --teal-end: #2d8a9a;
             --history: red;
             --leftbt: #9598A9;
-            --plus:#528E2F;
+            --plus: #528E2F;
         }
 
         h1 {
@@ -65,7 +65,7 @@
             <!-- Title -->
             <div class="flex flex-row mb-[1.5rem] relative w-[340px]">
                 <h1 class="text-[20px] font-bold mx-auto">Transaction</h1>
-                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="./img/PencilSimple.png" alt="">
+                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="../assets/img/PencilSimple.png" alt="" id="edit-form">
             </div>
 
             <!-- Cards -->
@@ -74,7 +74,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px]  rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">Compass card</p>
@@ -91,7 +91,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/food.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/food.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">Fresh Slice</p>
@@ -107,7 +107,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/food.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/food.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">McDonald</p>
@@ -124,7 +124,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/tt.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/tt.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">T&T</p>
@@ -141,7 +141,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/rent.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/rent.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">October rent</p>
@@ -158,7 +158,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/concert.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/concert.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">Concert</p>
@@ -176,7 +176,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/income.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/income.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">Income</p>
@@ -193,7 +193,7 @@
                 class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
                     <div class="icon">
-                        <img src="./img/tt.jpg" alt="icon" class="w-[40px] h-[40px]">
+                        <img src="../assets/img/tt.jpg" alt="icon" class="w-[40px] h-[40px]">
                     </div>
                     <div class="leftbox">
                         <p class="title">Walmart</p>
@@ -209,28 +209,35 @@
 
         </div>
 
-        <!-- nav bar -->
-        <nav class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 ">
-            <button class="flex flex-col items-center">
-                <img src="./img/House.png" alt="home" class="w-5 h-5">
+
+        <nav
+            class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
+            <button class="flex flex-col items-center" id="home">
+                <img src="../assets/logo/default_home.svg" alt="home" class="w-5 h-5">
             </button>
-            <button class="flex flex-col items-center">
-                <img src="./img/Receiptopen.png" alt="note" class="w-5 h-5">
+            <button class="flex flex-col items-center" id="receipt">
+                <img src="../assets/logo/export_transaction.svg" alt="note" class="w-5 h-5">
             </button>
-            <button class="flex flex-col items-center">
-                <img src="./img/Plus.png" alt="plus" class="w-6 h-6">
+            <button class="flex flex-col items-center" id="open-form">
+                <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
             </button>
-            <button class="flex flex-col items-center">
-                <img src="./img/SquaresFour.png" alt="grid" class="w-5 h-5">
+            <button class="flex flex-col items-center" id="category">
+                <img src="../assets/logo/default_categories.svg" alt="grid" class="w-5 h-5">
             </button>
-            <button class="flex flex-col items-center">
-                <img src="./img/GearSix.png" alt="settings" class="w-5 h-5">
+            <button class="flex flex-col items-center" id="openSettings">
+                <img src="../assets/logo/default_setting.svg" alt="settings" class="w-5 h-5">
             </button>
         </nav>
 
-
-
     </main>
+
+    <script>
+        document.getElementById('open-form').addEventListener('click', () => window.location.href = "./saveTransaction.html");
+        document.getElementById('home').addEventListener('click', () => window.location.href = "../index.html");
+        document.getElementById('receipt').addEventListener('click', () => window.location.href = "./transaction.html")
+        document.getElementById('category').addEventListener('click', () => window.location.href = "./categories.html")
+        document.getElementById('openSettings').addEventListener('click', () => window.location.href = "./setting.html")
+    </script>
 </body>
 
 </html>
