@@ -63,3 +63,20 @@
 <br>Yesterday: I finished create logic and I'm showing batyres
 <br>Today: Today I will change modal to webpage and fix some bugs
 <br>Blockers: I had tech issues with my computer
+
+## Day 5 - Friday Oct 17
+- Aiya:
+<br>Yesterday:  I made it finallly right now user can add the categories and I also created a logo folder with default and active for navigation bar
+<br>Today: I will think about how to responsive in easy way with desktop version today
+<br>Blockers: Nothing
+
+- Daiki: 
+<br>Yesterday: I finished transactions page 
+<br>Today: I need review my code because Aiya commit will afect my job, so I'll create a merge
+<br>Blockers: Nothing
+
+- Gustavo 
+<br>Yesterday: I fixed some bugs and changed transaction to webpage and now I'm redirecting to another pages
+<br>Today: Today I'll get categories from Aiya user stories and apply this list on categories input on form +
+I'll make possible add and edit in the same form.
+<br>Blockers: Nothing

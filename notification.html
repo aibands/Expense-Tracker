@@ -23,7 +23,7 @@
 <body>
     <!-- Title -->
     <div class="flex flex-row p-10">
-        <img class="w-[24px] h-[24px] cursor-pointer" src="./logo/ArrowLeft.svg" alt="">
+        <img id="goBack" class="w-[24px] h-[24px] cursor-pointer" src="./logo/ArrowLeft.svg" alt="">
         <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Notification</h1>
     </div>
 
@@ -78,5 +78,9 @@
             </div>
         </div>
      </div>     
+
+     <script> 
+     document.getElementById('goBack').addEventListener('click', () => window.location.href = "index.html");
+   </script>
 </body>
 </html>

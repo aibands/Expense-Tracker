@@ -50,11 +50,10 @@
       </button>
     </header>
 
-    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <main class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
 
       <section class="lg:col-span-2">
-        <div
-          class="rounded-xl bg-gradient-to-r from-[color:var(--teal-start)] to-[color:var(--teal-end)] p-6 mb-4">
+        <div class="rounded-xl bg-gradient-to-r from-[color:var(--teal-start)] to-[color:var(--teal-end)] p-6 mb-4">
           <p class="text-sm text-white/90">Monthly Balance</p>
           <h2 class="text-3xl font-extrabold mt-2" id="m-balance"></h2>
         </div>
@@ -70,149 +69,70 @@
           </div>
         </div>
 
-        <div class="rounded-full bg-white/6 p-1 inline-flex items-center mb-4">
-          <button id="btn-week"
-            class="px-6 py-2 rounded-full bg-[color:var(--teal-start)] text-white font-medium">Week</button>
-          <button id="btn-month" class="px-6 py-2 rounded-full text-gray-300">Month</button>
-          <button id="btn-year" class="px-6 py-2 rounded-full text-gray-300">Year</button>
-        </div>
-
-        <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4">
-          <div class="h-48 flex items-end gap-4 px-6">
-            <div class="w-8 bg-white rounded-t-md" style="height:55%"></div>
-            <div class="w-8 bg-white rounded-t-md" style="height:75%"></div>
-            <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
-            <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
-            <div class="w-8 bg-white rounded-t-md" style="height:40%"></div>
-            <div class="w-8 bg-white rounded-t-md" style="height:60%"></div>
-            <div class="w-8 bg-white rounded-t-md" style="height:85%"></div>
-          </div>
-          <div class="flex justify-between text-xs text-gray-400 mt-4 px-6">
-            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-          </div>
-        </div>
-
       </section>
 
-      <aside class="space-y-6">
-        <div class="rounded-xl bg-[color:var(--card)] p-6">
-          <p class="text-sm text-gray-400">Quick actions</p>
-          <button id="open-form"
-            class="mt-4 w-full rounded-lg py-3 bg-[color:var(--teal-start)] hover:bg-[color:var(--teal-end)] font-medium">Add
-            Transaction</button>
-        </div>
 
-        <nav class="rounded-xl bg-[color:var(--card)] p-4 flex justify-around">
-          <button class="flex flex-col items-center text-gray-300">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
-            </svg>
-            <span class="text-xs mt-1">Home</span>
-          </button>
-          <button class="flex flex-col items-center text-gray-300">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8M8 11h8m-7 4h6" />
-            </svg>
-            <span class="text-xs mt-1">Notes</span>
-          </button>
-          <button id="plus-mobile" class="flex flex-col items-center text-gray-300">
-            <div class="h-10 w-10 rounded-full bg-white/6 flex items-center justify-center">+</div>
-            <span class="text-xs mt-1">Add</span>
-          </button>
-          <button class="flex flex-col items-center text-gray-300">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <span class="text-xs mt-1">Grid</span>
-          </button>
-          <button class="flex flex-col items-center text-gray-300" id="openSettings">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4m0 8v4m8-8h-4M4 12H0" />
-            </svg>
-            <span class="text-xs mt-1">Settings</span>
-          </button>
-        </nav>
-      </aside>
+      <div class="rounded-full bg-white/6 p-1 inline-flex items-center mb-4">
+        <button id="btn-week"
+          class="px-6 py-2 rounded-full bg-[color:var(--teal-start)] text-white font-medium">Week</button>
+        <button id="btn-month" class="px-6 py-2 rounded-full text-gray-300">Month</button>
+        <button id="btn-year" class="px-6 py-2 rounded-full text-gray-300">Year</button>
+      </div>
+      <section class="lg:col-span-1" aria-label="charts-section"></section>
+      <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4">
+        <div class="h-48 flex items-end gap-10 px-6">
+          <div class="w-8 bg-white rounded-t-md" style="height:55%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:75%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:40%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:60%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:85%"></div>
+        </div>
+        <div class="flex justify-between text-xs text-gray-400 mt-4 px-6">
+          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+        </div>
+      </div>
+
+      <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4"> <!--other graph-->
+        <div class="h-48 flex items-end gap-10 px-6">
+          <div class="w-8 bg-white rounded-t-md" style="height:55%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:75%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:40%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:60%"></div>
+          <div class="w-8 bg-white rounded-t-md" style="height:85%"></div>
+        </div>
+        <div class="flex justify-between text-xs text-gray-400 mt-4 px-6">
+          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+        </div>
+      </div>
+
+      <nav
+        class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
+        <button class="flex flex-col items-center" id="home">
+          <img src="./assets/logo/active_home.svg" alt="home" class="w-5 h-5">
+        </button>
+        <button class="flex flex-col items-center" id="receipt">
+          <img src="./assets/logo/default_transaction.svg" alt="note" class="w-5 h-5">
+        </button>
+        <button class="flex flex-col items-center" id="open-form">
+          <img src="./assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="category">
+          <img src="./assets/logo/default_categories.svg" alt="grid" class="w-5 h-5">
+        </button>
+        <button class="flex flex-col items-center" id="openSettings">
+          <img src="./assets/logo/default_setting.svg" alt="settings" class="w-5 h-5">
+        </button>
+      </nav>
 
     </main>
 
   </div>
 
-  <div id="modal" class="fixed inset-0 bg-black/60 flex items-end sm:items-center justify-center p-4 z-50 hidden">
-    <div class="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 bg-white/5 rounded-xl p-6">
-      <div class="flex items-center justify-between mb-4">
-        <h3 class="text-lg font-semibold">Add transaction</h3>
-        <button id="close-modal" class="text-gray-300">✕</button>
-      </div>
-
-      <form action="#" id="transaction-form">
-        <div class="bg-[color:var(--card)] rounded-lg p-4 space-y-3">
-          <div class="rounded-full bg-white/6 p-1 inline-flex">
-            <button id="type-expense" class="px-4 py-2 rounded-full bg-[color:var(--teal-start)] cl-expense">Expense</button>
-            <button id="type-income" class="px-4 py-2 rounded-full text-gray-300">Income</button>
-          </div><br />
-
-          <label class="text-sm text-gray-400">Amount</label>
-          <input id="amount" type="number" placeholder="$0.00" step="0.01"
-            class="w-full rounded-md p-3 bg-white/6 placeholder:text-gray-400 text-gray-600" />
-
-          <label class="text-sm text-gray-400">Category</label>
-          <select class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="category">
-            <option>Rent</option>
-            <option>Food</option>
-            <option>Transport</option>
-          </select>
-
-          <label class="text-sm text-gray-400">Date</label>
-          <input type="date" class="w-full rounded-md p-3 bg-white/6 text-gray-600" id="date" />
-
-          <label class="text-sm text-gray-400">Description (Optional)</label>
-          <input type="text" placeholder="Description" class="w-full rounded-md p-3 bg-white/6 text-gray-600"
-            id="description" />
-
-          <button id="save-btn"
-            class="w-full rounded-lg py-3 bg-[color:var(--teal-start)] hover:bg-[color:var(--teal-end)] font-medium">Add
-            Transaction</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div id="settingsPage" class="hidden fixed inset-0 bg-[#0e1320] overflow-y-auto p-6">
-    <h2 class="text-center font-bold text-lg mb-6">Setting</h2>
-    <div>
-      <p class="text-gray-400 mb-2">General</p>
-      <div class="space-y-2">
-        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Profile</span> ➜</div>
-        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Appearance</span> <span
-            class="text-gray-400">System</span></div>
-        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Notifications</span> <input type="checkbox"
-            class="accent-[#114e63]" /></div>
-        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Currency</span> <span
-            class="text-gray-400">CAD</span></div>
-        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Display cents</span> <input type="checkbox"
-            checked class="accent-[#114e63]" /></div>
-      </div>
-
-
-      <p class="text-gray-400 mt-6 mb-2">Data</p>
-      <div class="space-y-2">
-        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Export data</span> ➜</div>
-        <div class="bg-[#1a2138] rounded-lg flex justify-between p-3"><span>Clear data</span> ➜</div>
-      </div>
-
-      <button id="closeSettings" class="w-full mt-6 bg-[#114e63] py-2 rounded-md">Back</button>
-    </div>
-  </div>
-
   <script>
-    const modal = document.getElementById('modal')
-    const settingsPage = document.getElementById('settingsPage')
-    const closeSettings = document.getElementById('closeSettings')
-    const openSettings = document.getElementById('openSettings')
-    //document.getElementById('close-modal').addEventListener('click', () => modal.classList.add('hidden'))
-    document.getElementById('plus-mobile').addEventListener('click', () => modal.classList.remove('hidden'))
 
     document.getElementById('btn-week').addEventListener('click', (e) => setActive(e.target))
     document.getElementById('btn-month').addEventListener('click', (e) => setActive(e.target))
@@ -226,27 +146,14 @@
       el.classList.remove('text-gray-300')
     }
 
-    const typeExpense = document.getElementById('type-expense')
-    const typeIncome = document.getElementById('type-income')
-    typeExpense.addEventListener('click', () => {
-      typeExpense.classList.add('bg-[color:var(--teal-start)]'); typeIncome.classList.remove('bg-[color:var(--teal-start)]'); typeIncome.classList.add('text-gray-300')
-    })
-    typeIncome.addEventListener('click', () => {
-      typeIncome.classList.add('bg-[color:var(--teal-start)]', 'text-white'); typeExpense.classList.remove('bg-[color:var(--teal-start)]'); typeExpense.classList.add('text-gray-300')
-    })
+    document.getElementById('open-form').addEventListener('click', () => window.location.href = "./pages/saveTransaction.html");
+    document.getElementById('notification').addEventListener('click', () => window.location.href = "./pages/notification.html");
+    document.getElementById('home').addEventListener('click', () => window.location.href = "./pages/index.html");
+    document.getElementById('receipt').addEventListener('click', () => window.location.href = "./pages/transaction.html")
+    document.getElementById('category').addEventListener('click', () => window.location.href = "./pages/categories.html")
+    document.getElementById('openSettings').addEventListener('click', () => window.location.href = "./pages/setting.html")
 
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden') })
-    openSettings.addEventListener('click', () => {
-      settingsPage.classList.remove('hidden')
-    })
-    closeSettings.addEventListener('click', () => {
-      settingsPage.classList.add('hidden')
-    })
 
-    document.getElementById('open-form').addEventListener('click', () => window.location.href = "saveTransaction.html");
-    document.getElementById('notification').addEventListener('click', () => window.location.href = "notification.html");
-    document.getElementById('home').addEventListener('click', () => window.location.href = "index.html");
-        
   </script>
   <script src="JS/main.js"></script>
 
