@@ -11,6 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
       --bg: #0b1320;
@@ -61,16 +62,15 @@
         <div class="grid grid-cols-2 gap-4 mb-6">
           <div class="rounded-lg bg-[color:var(--card)] p-4">
             <p class="text-sm text-gray-400">Income</p>
-            <p class="font-bold text-2xl mt-2" id="m-income">$Y</p>
+            <p class="font-bold text-2xl mt-2" id="m-income">$0</p>
           </div>
           <div class="rounded-lg bg-[color:var(--card)] p-4">
             <p class="text-sm text-gray-400">Expense</p>
-            <p class="font-bold text-2xl mt-2" id="m-expense">$Z</p>
+            <p class="font-bold text-2xl mt-2" id="m-expense">$0</p>
           </div>
         </div>
 
       </section>
-
 
       <div class="rounded-full bg-white/6 p-1 inline-flex items-center mb-4">
         <button id="btn-week"
@@ -79,34 +79,13 @@
         <button id="btn-year" class="px-6 py-2 rounded-full text-gray-300">Year</button>
       </div>
       <section class="lg:col-span-1" aria-label="charts-section"></section>
-      <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4">
-        <div class="h-48 flex items-end gap-10 px-6">
-          <div class="w-8 bg-white rounded-t-md" style="height:55%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:75%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:40%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:60%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:85%"></div>
-        </div>
-        <div class="flex justify-between text-xs text-gray-400 mt-4 px-6">
-          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-        </div>
-      </div>
 
-      <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4"> <!--other graph-->
-        <div class="h-48 flex items-end gap-10 px-6">
-          <div class="w-8 bg-white rounded-t-md" style="height:55%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:75%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:50%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:40%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:60%"></div>
-          <div class="w-8 bg-white rounded-t-md" style="height:85%"></div>
-        </div>
-        <div class="flex justify-between text-xs text-gray-400 mt-4 px-6">
-          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-        </div>
+      <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4">
+        <h2>Expenses by category</h2>
+        <canvas id="barChart" class="mt-4" height="300"></canvas>
+      </div>
+      <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4">
+        <canvas id="pieChart" height="300"></canvas>
       </div>
 
       <nav
@@ -134,17 +113,6 @@
 
   <script>
 
-    document.getElementById('btn-week').addEventListener('click', (e) => setActive(e.target))
-    document.getElementById('btn-month').addEventListener('click', (e) => setActive(e.target))
-    document.getElementById('btn-year').addEventListener('click', (e) => setActive(e.target))
-    function setActive(el) {
-      document.querySelectorAll('.rounded-full.bg-white\/6 button, .rounded-full.bg-white\/6 .active').forEach(b => {
-        b.classList.remove('bg-[color:var(--teal-start)]', 'text-white')
-        b.classList.add('text-gray-300')
-      })
-      el.classList.add('bg-[color:var(--teal-start)]', 'text-white')
-      el.classList.remove('text-gray-300')
-    }
 
     document.getElementById('open-form').addEventListener('click', () => window.location.href = "./pages/saveTransaction.html");
     document.getElementById('notification').addEventListener('click', () => window.location.href = "./pages/notification.html");
