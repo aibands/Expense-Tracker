@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F1427;
+            --card: #20243D;
+            --white: #f8f8f8;
+            --grey: #A6A6A6;
+            --lightgrey: #DADADA;
+            --check: #1B546C;
+            --check_circle: #0E384A;
+            --food: #EB84AF;
+            --transportation: #C38D5D;
+            --entertainment: #C29BEE;
+            --rent: #2899F4;
+            --red: #E03B12;
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg);
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- Title -->
+        <div class="flex flex-row p-10">
+            <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Categories</h1>
+            <a href="./add_Categories.html"><img class="w-[24px] h-[24px] cursor-pointer" src="../assets/logo/plus.svg"
+                    alt="add categories"></a>
+        </div>
+
+        <!-- body -->
+        <div class="flex flex-col justify-center items-center px-10">
+            <!-- pie chart section -->
+            <div class="w-full rounded-lg bg-[var(--card)] text-[var(--white)] p-5">
+                <p> Monthly spending </p>
+                <!-- pie -->
+                <div class="flex items-center justify-center gap-8 mt-4">
+                    <canvas id="spendingChart" class="w-[160px] h-[160px]"></canvas>
+
+                    <div class="text-[var-(--white)] space-y-2">
+                        <ul class="space-y-1 text-[12px]">
+                            <li class="flex items-center gap-2">
+                                <span class="inline-block w-2 h-2 bg-[var(--rent)] rounded-full"></span>
+                                Rent <span class="ml-1 font-semibold">95%</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="inline-block w-2 h-2 bg-[var(--food)] rounded-full"></span>
+                                Food <span class="ml-1 font-semibold">3%</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="inline-block w-2 h-2 bg-[var(--transportation)] rounded-full"></span>
+                                Transportation <span class="ml-1 font-semibold">2%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- for new categoreis -->
+            <div id="categoriesContainer" class="flex flex-col justify-center items-center w-full mt-2"></div>
+
+            <div class="flex flex-col justify-center items-center w-full" id="rent">
+                <!-- rent -->
+                <div class="bg-[var(--card)] w-full p-5 mt-4 mb-2 rounded-lg">
+                    <p class="text-[14px] font-regular text-[var(--white)] categories">🏠 Rent</p>
+                    <p class="text-[14px] font-bold text-[var(--white)] spent">$0 left</p>
+                    <div class="mt-8 flex flex-col items-end gap-1">
+                        <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $1000</p>
+                        <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
+                            <div class="h-[14px] bg-[var(--rent)] rounded-full w-[0%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center items-center w-full id=food">
+                    <!-- Food -->
+                    <div class="bg-[var(--card)] w-full p-5 my-2 rounded-lg">
+                        <p class="text-[14px] font-regular text-[var(--white)] categories">🥩 Food</p>
+                        <p class="text-[14px] font-bold text-[var(--white)] spent">$150 left</p>
+                        <div class="mt-8 flex flex-col items-end gap-1">
+                            <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $200</p>
+                            <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
+                                <div class="h-[14px] bg-[var(--food)] rounded-full w-[75%]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center w-full" id="transportation">
+                        <!-- Transportation -->
+                        <div class="bg-[var(--card)] w-full p-5 my-2 rounded-lg">
+                            <p class="text-[14px] font-regular text-[var(--white)] categories">🚅 Transportation</p>
+                            <p class="text-[14px] font-bold text-[var(--white)] spent">$100 left</p>
+                            <div class="mt-8 flex flex-col items-end gap-1">
+                                <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $120</p>
+                                <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
+                                    <div class="h-[14px] bg-[var(--transportation)] rounded-full w-[92%]"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center w-full" id="entertainment">
+                            <!-- Entertainment -->
+                            <div class="bg-[var(--card)] w-full p-5 my-2 rounded-lg">
+                                <p class="text-[14px] font-regular text-[var(--white)] categories">🎶 Entertainment</p>
+                                <p class="text-[14px] font-bold text-[var(--white)] spent">$100 left</p>
+                                <div class="mt-8 flex flex-col items-end gap-1">
+                                    <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $100</p>
+                                    <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
+                                        <div class="h-[14px] bg-[var(--entertainment)] rounded-full w-[100%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- nav bar -->
+                            <nav
+                                class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
+                                <button class="flex flex-col items-center" id="home">
+                                    <img src="../assets/logo/default_home.svg" alt="home" class="w-5 h-5">
+                                </button>
+                                <button class="flex flex-col items-center" id="receipt">
+                                    <img src="../assets/logo/default_transaction.svg" alt="note" class="w-5 h-5">
+                                </button>
+                                <button class="flex flex-col items-center" id="open-form">
+                                    <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
+                                </button>
+                                <button class="flex flex-col items-center" id="category">
+                                    <img src="../assets/logo/active_categories.svg" alt="grid" class="w-5 h-5">
+                                </button>
+                                <button class="flex flex-col items-center" id="openSettings">
+                                    <img src="../assets/logo/default_setting.svg" alt="settings" class="w-5 h-5">
+                                </button>
+                            </nav>
+    </main>
+
+    <script>
+        // for pie chart
+        $(document).ready(function () {
+            const rent = getComputedStyle(document.documentElement)
+                .getPropertyValue('--rent').trim();
+            const food = getComputedStyle(document.documentElement)
+                .getPropertyValue('--food').trim();
+            const transportation = getComputedStyle(document.documentElement)
+                .getPropertyValue('--transportation').trim();
+
+            const ctx = $("#spendingChart")[0].getContext("2d");
+
+            new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                    labels: ["rent", "food", "transportation"],
+                    datasets: [{
+                        data: [95, 3, 2],
+                        backgroundColor: [rent, food, transportation],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    cutout: "60%",
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    }
+                }
+            });
+        });
+
+        // get from add
+        $(document).ready(function () {
+            const categories = JSON.parse(localStorage.getItem("categories") || "[]");
+
+            categories.forEach(cate => {
+                const categoryHTML = `
+            <div class="flex flex-col justify-center items-center w-full my-2">
+                <div class="bg-[var(--card)] w-full p-5 rounded-lg"> 
+                    <p class="text-[14px] font-regular text-[var(--white)] categories">${cate.emoji} ${cate.name}</p>
+                    <p class="text-[14px] font-bold text-[var(--white)] spent">$0 left</p>
+                    <div class="mt-8 flex flex-col items-end gap-1">
+                        <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $${cate.budget}</p>
+                        <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
+                            <div class="h-[14px] rounded-full w-[100%]" style="background-color: ${cate.color};"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+                $("#categoriesContainer").prepend(categoryHTML);
+            });
+        });
+
+    </script>
+
+    <script>
+        document.getElementById('open-form').addEventListener('click', () => window.location.href = "./saveTransaction.html");
+        document.getElementById('home').addEventListener('click', () => window.location.href = "../index.html");
+        document.getElementById('receipt').addEventListener('click', () => window.location.href = "./transaction.html")
+        document.getElementById('category').addEventListener('click', () => window.location.href = "./categories.html")
+        document.getElementById('openSettings').addEventListener('click', () => window.location.href = "./setting.html")
+    </script>
+</body>
+
+</html>

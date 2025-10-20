@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=390, initial-scale=1.0">
+    <title>transaction (390px)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b1320;
+            --card: #20243d;
+            --teal-start: #1f6b74;
+            --teal-end: #2d8a9a;
+            --history: red;
+            --leftbt: #9598A9;
+            --plus: #528E2F;
+            --editbg:#1B546C;
+        }
+
+        h1 {
+            font-family: 'poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .icon {
+            overflow: hidden;
+            background: white;
+            border-radius: 20%;
+            margin: 20px 10px;
+        }
+
+        .leftbox {
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .title {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 400;
+            line-height: 150%;
+            font-size: 14px;
+        }
+
+        .rightbox {
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 300;
+            margin-left: auto;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        .detail {
+            font-size: 12px;
+            font-weight: 400;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <section class="container min-h-screen flex flex-col items-center gap-[30px] bg-[var(--bg)] pb-[5.4rem]"
+            style=" color:white; padding-top: 3rem; ">
+
+            <!-- Title -->
+            <div class="flex flex-row mb-[1.5rem] relative w-[340px]">
+                <h1 class="text-[20px] font-bold mx-auto">Transaction</h1>
+                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="../assets/img/PencilSimple.png" alt=""
+                    id="edit-form">
+            </div>
+
+            <!-- Cards -->
+
+            <div id="cards" class=" gap-4">
+
+            </div>
+
+
+        </section>
+
+
+        <nav
+            class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
+            <button class="flex flex-col items-center" id="home">
+                <img src="../assets/logo/default_home.svg" alt="home" class="w-5 h-5">
+            </button>
+            <button class="flex flex-col items-center" id="receipt">
+                <img src="../assets/logo/export_transaction.svg" alt="note" class="w-5 h-5">
+            </button>
+            <button class="flex flex-col items-center" id="open-form">
+                <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
+            </button>
+            <button class="flex flex-col items-center" id="category">
+                <img src="../assets/logo/default_categories.svg" alt="grid" class="w-5 h-5">
+            </button>
+            <button class="flex flex-col items-center" id="openSettings">
+                <img src="../assets/logo/default_setting.svg" alt="settings" class="w-5 h-5">
+            </button>
+        </nav>
+
+
+
+
+        <script>
+            const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+            for (let transaction of transactions) {
+                $('#cards').append(`
+        <div class="shirinkPart bg-gradient-to-br block w-[350px] h-[75px] p-[8px] rounded-lg shadow-lg transform  hover:left transition-transform transition:width 0.5s duration-300 mb-[10px] relative ">
+           
+            <div class="editPart bg-[var(--editbg)]  rounded-lg flex flex-col items-end w-[334px] h-[80px] p-[8px]  z-[-1] absolute gap-[5px]" >  
+                
+                <button id="editBt" )">
+                <img src="../assets/img/PencilSimple.png " alt="ボタン画像" style="width:30px;height:30px;">
+                 </button>
+                 
+                 <button id="deleteBt" )">
+                 <img src="../assets/img/Trash.png" alt="ボタン画像" style="width:30px;height:30px;">
+                 </button>
+
+            </div>  
+           
+           
+            <div class=" bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                <div class="icon">
+                    <img src="${transaction.icon || '../assets/img/Frame 667.jpg'}" alt="icon" class="w-[40px] h-[40px]">
+                </div>
+                <div class="leftbox">
+                    <p class="title">${transaction.description || transaction.category}</p>
+                    <p class="detail text-[var(--leftbt)]">${transaction.category}</p>
+                </div>
+                <div class="rightbox">
+                    <h2 class="text-[${transaction.type === 'income' ? 'var(--plus)' : 'var(--history)'}] text-[14px]">
+                        ${transaction.type === 'income' ? '+' : '-'}$${transaction.amount}
+                    </h2>
+                    <p class="detail text-[var(--leftbt)]">${transaction.date}</p>
+                </div>
+            </div>
+
+        
+
+            
+        </div>
+
+       
+       
+        
+
+
+    `);
+            }
+
+
+            const shrinkLeft = document.getElementById(`.rightbox`)
+
+            $('#cards').on('mouseover', '.rightbox', function (e) {
+                $(e.target).closest('.shirinkPart').css({
+                    width: '300px',
+                    transition:'width 0.3s'
+                })
+
+            })
+
+
+            $('#cards').on('mouseleave', '.rightbox', function (e) {
+                
+                $(e.target).closest('.shirinkPart').css({
+                    width: '350px', //original width
+                    transition: 'width 0.3s'
+                });
+            });
+
+
+            document.getElementById('open-form').addEventListener('click', () => window.location.href = "./saveTransaction.html");
+            document.getElementById('home').addEventListener('click', () => window.location.href = "../index.html");
+            document.getElementById('receipt').addEventListener('click', () => window.location.href = "./transaction.html");
+            document.getElementById('category').addEventListener('click', () => window.location.href = "./categories.html");
+            document.getElementById('openSettings').addEventListener('click', () => window.location.href = "./setting.html");
+
+
+        </script>
+
+    </main>
+</body>
+
+</html>
