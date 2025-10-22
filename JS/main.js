@@ -164,7 +164,6 @@ function setInitialCategories(){ // Categories
 
 $(document).ready(function () {
     setInitialCategories();
-    console.log(categories);
     updateMainPage();
     renderDynamicBarChart('week');
     renderPieChart();

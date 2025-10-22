@@ -17,6 +17,7 @@
             --history: red;
             --leftbt: #9598A9;
             --plus: #528E2F;
+            --editbg: #1B546C;
         }
 
         h1 {
@@ -53,161 +54,81 @@
         .detail {
             font-size: 12px;
             font-weight: 400;
+
+        }
+
+        .editPart {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            position: absolute;
+            right: -72px;
+            top: 8;
+            z-index: 10;
+
+        }
+
+        .shirinkPart.active .editPart {
+            opacity: 1;
+            pointer-events: auto;
+
+
+        }
+
+
+
+
+        .shirinkPart {
+            width: 100%;
+            max-width: 350px;
+
+            border-radius: 10px;
+            overflow: visible;
+            position: relative;
+            transition: transform 0.5s ease, width 0.5s ease;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+
+        .shirinkPart.active {
+
+
+            width: calc(100% - 80px);
+
+            z-index: 999;
+        }
+
+        @media (max-width: 360px) {
+            .shirinkPart.active {
+                transform: translateX(-30px);
+                width: calc(100% - 30px);
+            }
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
     <main>
-        <div class="container min-h-screen flex flex-col items-center gap-[30px] bg-[var(--bg)] pb-[5.4rem]"
+        <section class="container min-h-screen flex flex-col items-center gap-[30px] bg-[var(--bg)] pb-[5.4rem]"
             style=" color:white; padding-top: 3rem; ">
 
             <!-- Title -->
             <div class="flex flex-row mb-[1.5rem] relative w-[340px]">
                 <h1 class="text-[20px] font-bold mx-auto">Transaction</h1>
-                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="../assets/img/PencilSimple.png" alt="" id="edit-form">
+                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="../assets/img/PencilSimple.png" alt=""
+                    id="edit-form">
             </div>
 
             <!-- Cards -->
 
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px]  rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/Frame 667.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">Compass card</p>
-                        <p class="detail text-[var(--leftbt)]">Transportation</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
-            </div>
+            <div id="cards" class=" gap-4">
 
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/food.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">Fresh Slice</p>
-                        <p class="detail text-[var(--leftbt)]">Food</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/food.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">McDonald</p>
-                        <p class="detail text-[var(--leftbt)]">Food</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/tt.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">T&T</p>
-                        <p class="detail text-[var(--leftbt)]">Groceries</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/rent.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">October rent</p>
-                        <p class="detail text-[var(--leftbt)]">rent</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/concert.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">Concert</p>
-                        <p class="detail text-[var(--leftbt)]">Entertainment</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
             </div>
 
 
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/income.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">Income</p>
-                        <p class="detail text-[var(--leftbt)]">Income</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--plus)] text-[14px]">+2500.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="bg-gradient-to-br w-[350px] h-[59px] p-[8px] rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                    <div class="icon">
-                        <img src="../assets/img/tt.jpg" alt="icon" class="w-[40px] h-[40px]">
-                    </div>
-                    <div class="leftbox">
-                        <p class="title">Walmart</p>
-                        <p class="detail text-[var(--leftbt)]">Groceries</p>
-                    </div>
-                    <div class="rightbox">
-                        <h2 class="text-[var(--history)] text-[14px]">-$25.00</h2>
-                        <p class="detail text-[var(--leftbt)]">Today, 12:36 pm</p>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
+        </section>
 
 
         <nav
@@ -238,6 +159,190 @@
         document.getElementById('category').addEventListener('click', () => window.location.href = "./categories.html")
         document.getElementById('openSettings').addEventListener('click', () => window.location.href = "./setting.html")
     </script>
+
+
+        <!-- Edit Modal -->
+<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-[9999]">
+    <div class="bg-[var(--bg)] text-white p-6 rounded-2xl w-[100%] max-w-[400px] flex flex-col gap-3 shadow-lg">
+        <h2 class="text-lg font-semibold mb-2 text-center">Edit Transaction</h2>
+
+        <label class="text-sm">Amount</label>
+        <input id="editAmount" type="number"
+            class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
+
+        <label class="text-sm">Category</label>
+        <input id="editCategory" type="text"
+            class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
+
+        <label class="text-sm">Description</label>
+        <input id="editDescription" type="text"
+            class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
+
+        <div class="flex ml-4 gap-2 mt-4">
+            <button id="cancelEdit" class="px-[60px] ml-[-10px] py-2 bg-gray-300 rounded-lg text-lg text-black">Cancel</button>
+            <button id="saveEdit" class="px-[60px] py-2 bg-[var(--editbg)] rounded-lg text-lg text-white">Save</button>
+        </div>
+    </div>
+</div>
+
+        <!-- Delete Confirmation Modal -->
+        <div id="deleteModal"
+            class="fixed ml-[-30px]  inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[9999]">
+            <div class="bg-white text-black p-6 rounded-2xl w-[350px] flex flex-col gap-4 shadow-lg relative">
+                <!-- Close button -->
+                <button id="closeDeleteModal"
+                    class="absolute top-3 right-3 text-black text-lg font-bold">&times;</button>
+                <h2 class="text-lg font-bold text-center">Delete Transaction</h2>
+                <h2 class="text-lg text-center">Are you sure you want to delete this transaction?</h2>
+
+                <div class="flex ml-4 gap-2 mt-4">
+                    <button id="cancelDelete" class="px-12 py-2 bg-gray-300 rounded-lg text-lg">No</button>
+                    <button id="confirmDelete"
+                        class="px-12 py-2 bg-[var(--bg)] rounded-lg text-lg text-white">Yes</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+                let currentEditIndex = null;
+                let lastFocusedButton = null;
+
+                // cards
+                for (let transaction of transactions) {
+                    $('#cards').append(`
+        <div class="shirinkPart bg-gradient-to-br block w-[350px] h-[75px] p-[8px] rounded-lg shadow-lg transform hover:left transition-transform duration-300 mb-[10px] relative">
+            <div class="editPart bg-[var(--editbg)] rounded-lg flex flex-row justify-end w-[334px] h-[80px] p-[8px] z-[-1] absolute gap-[5px]">  
+                <button class="editBt">
+                    <img src="../assets/img/PencilSimple.png" alt="Edit" style="width:30px;height:30px;">
+                </button>
+                <button class="deleteBt">
+                    <img src="../assets/img/Trash.png" alt="Delete" style="width:30px;height:30px;">
+                </button>
+            </div>  
+            <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
+                <div class="icon">
+                    <img src="${transaction.icon || '../assets/img/Frame 667.jpg'}" alt="icon" class="w-[40px] h-[40px]">
+                </div>
+                <div class="leftbox">
+                    <p class="title">${transaction.description || transaction.category}</p>
+                    <p class="detail text-[var(--leftbt)]">${transaction.category}</p>
+                </div>
+                <div class="rightbox">
+                    <h2 class="text-[${transaction.type === 'income' ? 'var(--plus)' : 'var(--history)'}] text-[14px]">
+                        ${transaction.type === 'income' ? '+' : '-'}$${transaction.amount}
+                    </h2>
+                    <p class="detail text-[var(--leftbt)]">${transaction.date}</p>
+                </div>
+            </div>
+        </div>`);
+                }
+
+                // slidebyclick
+                $('#cards').on('click', '.shirinkPart', function (e) {
+                    const clickedCard = $(this);
+                    $('.shirinkPart').not(clickedCard).removeClass('active');
+                    clickedCard.toggleClass('active');
+                });
+
+                // edit
+                $('#cards').on('click', '.editBt', function (e) {
+                    e.stopPropagation();
+                    const card = $(this).closest('.shirinkPart');
+                    currentEditIndex = card.index();
+                    lastFocusedButton = this;
+
+                    const t = transactions[currentEditIndex];
+                    $('#editDescription').val(t.description || '');
+                    $('#editCategory').val(t.category || '');
+                    $('#editAmount').val(t.amount || '');
+
+                    $('#editModal').removeClass('hidden').addClass('flex');
+                    $('#editDescription').focus();
+                });
+
+                // save
+                $('#saveEdit').on('click', function () {
+                    if (currentEditIndex === null) return;
+
+                    const updated = {
+                        ...transactions[currentEditIndex],
+                        description: $('#editDescription').val(),
+                        category: $('#editCategory').val(),
+                        amount: $('#editAmount').val()
+                    };
+
+                    transactions[currentEditIndex] = updated;
+                    localStorage.setItem('transactions', JSON.stringify(transactions));
+
+                    // update
+                    const card = $('#cards .shirinkPart').eq(currentEditIndex);
+                    card.find('.title').text(updated.description);
+                    card.find('.leftbox .detail').text(updated.category);
+                    card.find('.rightbox h2').text((updated.type === 'income' ? '+' : '-') + '$' + updated.amount);
+
+                    $('#editModal').addClass('hidden').removeClass('flex');
+                    if (lastFocusedButton) lastFocusedButton.focus();
+                });
+
+                // cancel
+                $('#cancelEdit').on('click', function () {
+                    $('#editModal').addClass('hidden').removeClass('flex');
+                    if (lastFocusedButton) lastFocusedButton.focus();
+                });
+
+                // Esc close
+                $(document).on('keydown', function (e) {
+                    if (e.key === "Escape" && !$('#editModal').hasClass('hidden')) {
+                        $('#editModal').addClass('hidden').removeClass('flex');
+                        if (lastFocusedButton) lastFocusedButton.focus();
+                    }
+                });
+
+                let deleteIndex = null;
+
+                // Delete button click -> show confirmation modal
+                $('#cards').on('click', '.deleteBt', function (e) {
+                    e.stopPropagation();
+                    deleteIndex = $(this).closest('.shirinkPart').index();
+                    $('#deleteModal').removeClass('hidden').addClass('flex');
+                });
+
+                // Cancel deletion
+                $('#cancelDelete, #closeDeleteModal').on('click', function () {
+                    deleteIndex = null;
+                    $('#deleteModal').addClass('hidden').removeClass('flex');
+                });
+
+                // Confirm deletion
+                $('#confirmDelete').on('click', function () {
+                    if (deleteIndex === null) return;
+
+                    transactions.splice(deleteIndex, 1);
+                    localStorage.setItem('transactions', JSON.stringify(transactions));
+                    $('#cards .shirinkPart').eq(deleteIndex).remove();
+
+                    deleteIndex = null;
+                    $('#deleteModal').addClass('hidden').removeClass('flex');
+                });
+
+
+
+
+
+            });
+        </script>
+
+
+    </main>
+
+
 </body>
 
 </html>
