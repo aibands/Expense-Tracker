@@ -1,10 +1,10 @@
 ## Expense-Tracker
 Tech: HTML, CSS, JavaScript, LocalStorage
 Methodology: Scrum (3 Sprints, 3 Weeks)
-Team Members:
-Aiya Tossapol — Scrum Master(Sprint 1), Product Owner (Sprint 2), Developer
-Gustavo Rios — Scrum Master(Sprint 2), Product Owner (Sprint 3), Developer
-Daiki Edibisuya  — Scrum Master(Sprint 3), Product Owner (Sprint 2), Developer
+# Team Members:
+- Aiya Tossapol — Scrum Master(Sprint 1), Product Owner (Sprint 2), Developer
+- Gustavo Rios — Scrum Master(Sprint 2), Product Owner (Sprint 3), Developer
+- Daiki Edibisuya  — Scrum Master(Sprint 3), Product Owner (Sprint 2), Developer
 
 ## Project Overview 
 A web application that allows users to track their expenses and income by adding, editing, deleting, and categorizing transactions.
