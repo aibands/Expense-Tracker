@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=390, initial-scale=1.0">
     <title>transaction (390px)</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <style>
@@ -152,6 +150,15 @@
             </button>
         </nav>
 
+    </main>
+
+    <script>
+        document.getElementById('open-form').addEventListener('click', () => window.location.href = "./saveTransaction.html");
+        document.getElementById('home').addEventListener('click', () => window.location.href = "../index.html");
+        document.getElementById('receipt').addEventListener('click', () => window.location.href = "./transaction.html")
+        document.getElementById('category').addEventListener('click', () => window.location.href = "./categories.html")
+        document.getElementById('openSettings').addEventListener('click', () => window.location.href = "./setting.html")
+    </script>
 
 
         <!-- Edit Modal -->
