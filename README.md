@@ -25,7 +25,7 @@ These pages are mainly for design and interaction previews — some functionalit
 **Pages:**
 - Notification page – preview of alert design
 - Setting page – preview of user settings layout
-- 
+  
 ## How to Run
 1.Clone or download this repository.
 2.Open index.html in your web browser.
