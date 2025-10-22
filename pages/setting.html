@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F1427;
+            --card: #20243D;
+            --white: #f8f8f8;
+            --grey: #A6A6A6;
+            --lightgrey: #DADADA;
+            --check: #1B546C;
+            --check_circle: #0E384A;
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Title -->
+    <div class="flex flex-row p-10">
+        <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Setting</h1>
+    </div>
+
+    <!-- General Setting -->
+    <div class="setting mb-8 px-8">
+        <h1 class="text-[16px] font-regular mx-auto text-[var(--white)] mt-1">General</h1>
+        <div class="setting-box flex p-2 justify-between items-center w-full bg-[var(--card)] rounded-lg mt-3 mb-2">
+            <p class="text-[var(--white)] text-[14px]">Profile</p>
+            <img src="../assets/img/next.svg">
+        </div>
+        <div class="setting-box flex p-2 justify-between items-center w-full bg-[var(--card)] rounded-lg mb-2">
+            <p class="text-[var(--white)] text-[14px]">Appearance</p>
+            <div class="flex flex-row">
+                <p class="text-[var(--grey)] text-[14px]"> System</p>
+                <img src="../assets/img/next.svg">
+            </div>
+        </div>
+        <div class="setting-box flex p-2 justify-between items-center w-full bg-[var(--card)] rounded-lg mb-2">
+            <p class="text-[var(--white)] text-[14px]">Notification</p>
+            <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer">
+                <div class="w-11 h-6 bg-[var(--grey)] rounded-full peer-checked:bg-[var(--check)] transition-colors">
+                </div>
+                <div
+                    class="absolute left-0.5 top-0.5 w-5 h-5 bg-[var(--lightgrey)] rounded-full shadow-md peer-checked:translate-x-5 transition-transform">
+                </div>
+            </label>
+        </div>
+        <div class="setting-box flex p-2 justify-between items-center w-full bg-[var(--card)] rounded-lg mb-2">
+            <p class="text-[var(--white)] text-[14px]">Currency</p>
+            <div class="flex flex-row">
+                <p class="text-[var(--grey)] text-[14px]">CAD</p>
+                <img src="../assets/img/next.svg">
+            </div>
+        </div>
+        <div class="setting-box flex p-2 justify-between items-center w-full bg-[var(--card)] rounded-lg mb-2">
+            <p class="text-[var(--white)] text-[14px]">Display Cent</p>
+            <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer">
+                <div class="w-11 h-6 bg-[var(--grey)] rounded-full peer-checked:bg-[var(--check)] transition-colors">
+                </div>
+                <div
+                    class="absolute left-0.5 top-0.5 w-5 h-5 bg-[var(--lightgrey)] rounded-full shadow-md peer-checked:translate-x-5 transition-transform">
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <!-- Data Setting -->
+    <div class="setting px-8">
+        <h1 class="text-[16px] font-regular mx-auto text-[var(--white)] mt-1">Data</h1>
+        <div class="setting-box flex p-2 justify-between items-center w-full bg-[var(--card)] rounded-lg mb-2 mt-3 ">
+            <p class="text-[var(--white)] text-[14px]">Export Data</p>
+            <img src="../assets/img/next.svg">
+        </div>
+        <div class="setting-box flex p-2 justify-between items-center w-full bg-[var(--card)] rounded-lg mb-2">
+            <p class="text-[var(--white)] text-[14px]">Clear Data</p>
+            <img src="../assets/img/next.svg">
+        </div>
+    </div>
+
+    <!-- nav bar -->
+    <nav
+        class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
+        <button class="flex flex-col items-center" id="home">
+            <img src="../assets/logo/default_home.svg" alt="home" class="w-5 h-5">
+        </button>
+        <button class="flex flex-col items-center" id="receipt">
+            <img src="../assets/logo/default_transaction.svg" alt="note" class="w-5 h-5">
+        </button>
+        <button class="flex flex-col items-center" id="open-form">
+            <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="category">
+            <img src="../assets/logo/default_categories.svg" alt="grid" class="w-5 h-5">
+        </button>
+        <button class="flex flex-col items-center" id="openSettings">
+            <img src="../assets/logo/active_setting.svg" alt="settings" class="w-5 h-5">
+        </button>
+    </nav>
+
+    <script>
+        document.getElementById('open-form').addEventListener('click', () => window.location.href = "./saveTransaction.html");
+        document.getElementById('home').addEventListener('click', () => window.location.href = "../index.html");
+        document.getElementById('receipt').addEventListener('click', () => window.location.href = "./transaction.html")
+        document.getElementById('category').addEventListener('click', () => window.location.href = "./categories.html")
+        document.getElementById('openSettings').addEventListener('click', () => window.location.href = "./setting.html")
+    </script>
+</body>
+
+</html>
