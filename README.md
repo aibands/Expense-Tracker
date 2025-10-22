@@ -33,5 +33,5 @@ These pages are mainly for design and interaction previews — some functionalit
 3. Data will be stored automatically in your browser’s LocalStorage.
 
 ## Acknowledgements
-This project was created as part of the Final Project for Front End Programming with Java,
+This project was created as part of the Final Project for Front End Programming with Java Script,
 following the Scrum methodology to simulate real-world team-based development.
