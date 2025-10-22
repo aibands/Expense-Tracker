@@ -12,6 +12,9 @@ A web application that allows users to track their expenses and income by adding
 All data is saved using LocalStorage, so it remains available even after refreshing or closing the browser.
 Developed across three one-week sprints using the Scrum framework.
 
+All interface designs were created by our team.  
+You can view our Figma prototype here: https://www.figma.com/design/p2GTDoNRVYkG0ez8Ru2ELO/Expense-Tracker?node-id=0-1&t=Tb9OSNmGCE0HUzrL-1
+
 ## Features
 - Users can view monthly balance and total expenses per category
 - Users can Add, edit, or delete transactions (amount, category, date, description)
