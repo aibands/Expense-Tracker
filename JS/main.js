@@ -1,3 +1,4 @@
+let categories = null;
 //main page
 function updateMainPage() {
     const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
@@ -145,11 +146,11 @@ function renderPieChart() {
 
 function setInitialCategories(){ // Categories
     
-    let categories = JSON.parse(localStorage.getItem("categories") || "[]");
+    categories = JSON.parse(localStorage.getItem("categories") || "[]");
     let initialCat = [
-        {emoji: "", name: "Rent", budget: "", spent: 0},
-        {emoji: "", name: "Food", budget: "", spent: 0},
-        {emoji: "", name: "Transportation", budget: "", spent: 0},
+        {emoji: "🏠", name: "Rent", budget: "", spent: 0},
+        {emoji: "🍔", name: "Food", budget: "", spent: 0},
+        {emoji: "🚋", name: "Transportation", budget: "", spent: 0},
     ]
 
     if (categories.length === 0){
@@ -163,6 +164,7 @@ function setInitialCategories(){ // Categories
 
 $(document).ready(function () {
     setInitialCategories();
+    console.log(categories);
     updateMainPage();
     renderDynamicBarChart('week');
     renderPieChart();
