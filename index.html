@@ -30,9 +30,28 @@
   </style>
 </head>
 
-<body class="min-h-screen bg-[color:var(--bg)] text-white font-sans">
+<body class="min-h-screen bg-[color:var(--bg)] text-white font-sans lg:flex">
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <nav class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700
+    lg:static lg:flex-col lg:w-20 lg:h-auto lg:justify-start lg:gap-8 lg:border-t-0 lg:border-r lg:border-gray-700">
+    <button class="flex flex-col items-center lg:mt-4" id="home">
+      <img src="./assets/logo/active_home.svg" alt="home" class="w-6 h-6">
+    </button>
+    <button class="flex flex-col items-center" id="receipt">
+      <img src="./assets/logo/default_transaction.svg" alt="note" class="w-6 h-6">
+    </button>
+    <button class="flex flex-col items-center" id="open-form">
+      <img src="./assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
+    </button>
+    <button class="flex flex-col items-center" id="category">
+      <img src="./assets/logo/default_categories.svg" alt="grid" class="w-6 h-6">
+    </button>
+    <button class="flex flex-col items-center" id="openSettings">
+      <img src="./assets/logo/default_setting.svg" alt="settings" class="w-6 h-6">
+    </button>
+  </nav>
+
+  <div class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:ml-24">
 
     <header class="flex items-center justify-between mb-6">
       <div class="flex items-center gap-4" id="home">
@@ -87,25 +106,6 @@
       <div class="rounded-xl bg-[color:var(--card)] p-6 mt-4">
         <canvas id="pieChart" height="300"></canvas>
       </div>
-
-      <nav
-        class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
-        <button class="flex flex-col items-center" id="home">
-          <img src="./assets/logo/active_home.svg" alt="home" class="w-5 h-5">
-        </button>
-        <button class="flex flex-col items-center" id="receipt">
-          <img src="./assets/logo/default_transaction.svg" alt="note" class="w-5 h-5">
-        </button>
-        <button class="flex flex-col items-center" id="open-form">
-          <img src="./assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
-        </button>
-        <button class="flex flex-col items-center" id="category">
-          <img src="./assets/logo/default_categories.svg" alt="grid" class="w-5 h-5">
-        </button>
-        <button class="flex flex-col items-center" id="openSettings">
-          <img src="./assets/logo/default_setting.svg" alt="settings" class="w-5 h-5">
-        </button>
-      </nav>
 
     </main>
 
