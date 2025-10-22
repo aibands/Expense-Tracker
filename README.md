@@ -1,6 +1,7 @@
 ## Expense-Tracker
-Tech: HTML, CSS, JavaScript, LocalStorage
-Methodology: Scrum (3 Sprints, 3 Weeks)
+- Program: HTML, CSS, JavaScript, LocalStorage
+- Methodology: Scrum (3 Sprints, 3 Weeks)
+  
 # Team Members:
 - Aiya Tossapol — Scrum Master(Sprint 1), Product Owner (Sprint 2), Developer
 - Gustavo Rios — Scrum Master(Sprint 2), Product Owner (Sprint 3), Developer
@@ -27,9 +28,9 @@ These pages are mainly for design and interaction previews — some functionalit
 - Setting page – preview of user settings layout
   
 ## How to Run
-1.Clone or download this repository.
-2.Open index.html in your web browser.
-3.Data will be stored automatically in your browser’s LocalStorage.
+1. Clone or download this repository.
+2. Open index.html in your web browser.
+3. Data will be stored automatically in your browser’s LocalStorage.
 
 ## Acknowledgements
 This project was created as part of the Final Project for Front End Programming with Java,
