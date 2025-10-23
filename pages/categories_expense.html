@@ -25,7 +25,7 @@
 <body>
     <!-- Title -->
     <div class="flex flex-row p-10">
-        <img class="w-[24px] h-[24px] cursor-pointer" src="../assets/logo/ArrowLeft.svg" alt="">
+        <img class="w-[24px] h-[24px] cursor-pointer" src="../assets/logo/ArrowLeft.svg" alt="" id="goBack">
         <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Food</h1>
         <img class="w-[24px] h-[24px] cursor-pointer mx-2" src="../assets/logo/pencil.svg" alt="">
         <img class="w-[24px] h-[24px] cursor-pointer " src="../assets/logo/Trash.svg" alt="">
@@ -92,5 +92,9 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('goBack').addEventListener('click', () => window.location.href = "./categories.html");
+    </script>
 </body>
 </html>
