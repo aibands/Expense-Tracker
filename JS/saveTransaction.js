@@ -1,11 +1,18 @@
 function loadCategories() {
-    const categories = JSON.parse(localStorage.getItem('categories')) || [];
-    categories.sort((a, b) => a.name.localeCompare(b.name));
-    
-    categories.forEach(cate => {
-        const categoryDropdown = `<option>${cate.name}</option>`;
-        $("#category").append(categoryDropdown);
-    });
+    const categories = JSON.parse(localStorage.getItem("categories") || "[]");
+    const $categorySelect = $("#category");
+
+    $categorySelect.empty();
+    console.log(categories);
+    if (categories.length === 0) {
+        $categorySelect.append('<option value="">No categories added</option>');
+    } else {
+        categories.forEach(category => {
+            $categorySelect.append(`
+                <option value="${category.name}" data-color="${category.color}" data-emoji="${category.emoji}">${category.emoji} ${category.name}</option>
+            `);
+        });
+    }
 }
 
 //edit
