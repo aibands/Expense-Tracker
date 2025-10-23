@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>setting</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -70,46 +72,13 @@
     </main>
 
     <script>
-        // for pie chart
-        $(document).ready(function () {
-            const rent = getComputedStyle(document.documentElement)
-                .getPropertyValue('--rent').trim();
-            const food = getComputedStyle(document.documentElement)
-                .getPropertyValue('--food').trim();
-            const transportation = getComputedStyle(document.documentElement)
-                .getPropertyValue('--transportation').trim();
-
-            const ctx = $("#spendingChart")[0].getContext("2d");
-
-            new Chart(ctx, {
-                type: "doughnut",
-                data: {
-                    labels: ["rent", "food", "transportation"],
-                    datasets: [{
-                        data: [95, 3, 2],
-                        backgroundColor: [rent, food, transportation],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    cutout: "60%",
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { enabled: false }
-                    }
-                }
-            });
-        });
-
         // get from add
         $(document).ready(function () {
             const categories = JSON.parse(localStorage.getItem("categories") || "[]");
 
             categories.forEach(cate => {
                 const categoryHTML = `
-            <div class="flex flex-col justify-center items-center w-full my-2">
+            <div class="flex flex-col justify-center items-center w-full my-2" id="cat-expense">
                 <div class="bg-[var(--card)] w-full p-5 rounded-lg"> 
                     <p class="text-[14px] font-regular text-[var(--white)] categories">${cate.emoji} ${cate.name}</p>
                     <p class="text-[14px] font-bold text-[var(--white)] spent">$0 left</p>
@@ -129,6 +98,7 @@
 
     <script>
         document.getElementById('open-form').addEventListener('click', () => window.location.href = "./saveTransaction.html");
+        document.getElementById('categoriesContainer').addEventListener('click', () => window.location.href = "./categories_expense.html");
         document.getElementById('home').addEventListener('click', () => window.location.href = "../index.html");
         document.getElementById('receipt').addEventListener('click', () => window.location.href = "./transaction.html")
         document.getElementById('category').addEventListener('click', () => window.location.href = "./categories.html")
