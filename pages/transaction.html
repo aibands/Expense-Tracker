@@ -58,51 +58,60 @@
         }
 
         .editPart {
+            width: 30%;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.2s ease;
             position: absolute;
-            right: -72px;
+            right: -60px;
             top: 8;
             z-index: 10;
-
+            border-radius: 0 20px 20px 0;
+            min-height: 80px;
         }
 
         .shirinkPart.active .editPart {
             opacity: 1;
             pointer-events: auto;
-
+            
 
         }
 
-
+        .historybox {
+            width: 90%;
+        }
 
 
         .shirinkPart {
             width: 100%;
-            max-width: 350px;
-
+            max-width: 100%;
             border-radius: 10px;
             overflow: visible;
             position: relative;
-            transition: transform 0.5s ease, width 0.5s ease;
             cursor: pointer;
             z-index: 100;
+            margin-left: 0;
         }
 
 
-        .shirinkPart.active {
 
 
-            width: calc(100% - 80px);
-
-            z-index: 999;
-        }
-
-        @media (max-width: 360px) {
+        @media (max-width: 600px) {
             .shirinkPart.active {
-                transform: translateX(-30px);
-                width: calc(100% - 30px);
+
+                width: 70%;
+                /* editPartの幅だけ右を縮める */
+            }
+        }
+
+
+
+
+        @media (min-width: 600px) {
+            .shirinkPart.active {
+
+                width: 80%;
+                /* editPartの幅だけ右を縮める */
             }
         }
     </style>
@@ -111,11 +120,11 @@
 
 <body>
     <main>
-        <section class="container min-h-screen flex flex-col items-center gap-[30px] bg-[var(--bg)] pb-[5.4rem]"
+        <section class=" min-h-screen flex flex-col items-center w-[100%] gap-[30px] bg-[var(--bg)] pb-[5.4rem]"
             style=" color:white; padding-top: 3rem; ">
 
             <!-- Title -->
-            <div class="flex flex-row mb-[1.5rem] relative w-[340px]">
+            <div class="flex flex-row mb-[1.5rem] relative sm:w-[350px] lg:w-[900px]">
                 <h1 class="text-[20px] font-bold mx-auto">Transaction</h1>
                 <img class="w-[28px] h-[28px] absolute right-0 top-0" src="../assets/img/PencilSimple.png" alt=""
                     id="edit-form">
@@ -123,10 +132,16 @@
 
             <!-- Cards -->
 
-            <div id="cards" class=" gap-4">
+            <div class="historybox">
+
+
+                <div class="historybox">
+                    <div id="cards" class="flex flex-col items-start pl-[10%] gap-3 p-4 sm:p-6 mx-auto">
+                        <!-- カードがここに入る -->
+                    </div>
+                </div>
 
             </div>
-
 
         </section>
 
@@ -162,28 +177,31 @@
 
 
         <!-- Edit Modal -->
-<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-[9999]">
-    <div class="bg-[var(--bg)] text-white p-6 rounded-2xl w-[100%] max-w-[400px] flex flex-col gap-3 shadow-lg">
-        <h2 class="text-lg font-semibold mb-2 text-center">Edit Transaction</h2>
+        <div id="editModal"
+            class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-[9999]">
+            <div class="bg-[var(--bg)] text-white p-6 rounded-2xl w-[100%] max-w-[400px] flex flex-col gap-3 shadow-lg">
+                <h2 class="text-lg font-semibold mb-2 text-center">Edit Transaction</h2>
 
-        <label class="text-sm">Amount</label>
-        <input id="editAmount" type="number"
-            class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
+                <label class="text-sm">Amount</label>
+                <input id="editAmount" type="number"
+                    class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
 
-        <label class="text-sm">Category</label>
-        <input id="editCategory" type="text"
-            class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
+                <label class="text-sm">Category</label>
+                <input id="editCategory" type="text"
+                    class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
 
-        <label class="text-sm">Description</label>
-        <input id="editDescription" type="text"
-            class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
+                <label class="text-sm">Description</label>
+                <input id="editDescription" type="text"
+                    class="bg-white p-2 rounded-lg text-sm outline-none border border-gray-600">
 
-        <div class="flex ml-4 gap-2 mt-4">
-            <button id="cancelEdit" class="px-[60px] ml-[-10px] py-2 bg-gray-300 rounded-lg text-lg text-black">Cancel</button>
-            <button id="saveEdit" class="px-[60px] py-2 bg-[var(--editbg)] rounded-lg text-lg text-white">Save</button>
+                <div class="flex ml-4 gap-2 mt-4">
+                    <button id="cancelEdit"
+                        class="px-[60px] ml-[-10px] py-2 bg-gray-300 rounded-lg text-lg text-black">Cancel</button>
+                    <button id="saveEdit"
+                        class="px-[60px] py-2 bg-[var(--editbg)] rounded-lg text-lg text-white">Save</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         <!-- Delete Confirmation Modal -->
         <div id="deleteModal"
@@ -217,31 +235,43 @@
                 // cards
                 for (let transaction of transactions) {
                     $('#cards').append(`
-        <div class="shirinkPart bg-gradient-to-br block w-[350px] h-[75px] p-[8px] rounded-lg shadow-lg transform hover:left transition-transform duration-300 mb-[10px] relative">
-            <div class="editPart bg-[var(--editbg)] rounded-lg flex flex-row justify-end w-[334px] h-[80px] p-[8px] z-[-1] absolute gap-[5px]">  
-                <button class="editBt">
-                    <img src="../assets/img/PencilSimple.png" alt="Edit" style="width:30px;height:30px;">
-                </button>
-                <button class="deleteBt">
-                    <img src="../assets/img/Trash.png" alt="Delete" style="width:30px;height:30px;">
-                </button>
-            </div>  
-            <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center">
-                <div class="icon">
-                    <img src="${transaction.icon || '../assets/img/Frame 667.jpg'}" alt="icon" class="w-[40px] h-[40px]">
-                </div>
-                <div class="leftbox">
-                    <p class="title">${transaction.description || transaction.category}</p>
-                    <p class="detail text-[var(--leftbt)]">${transaction.category}</p>
-                </div>
-                <div class="rightbox">
-                    <h2 class="text-[${transaction.type === 'income' ? 'var(--plus)' : 'var(--history)'}] text-[14px]">
-                        ${transaction.type === 'income' ? '+' : '-'}$${transaction.amount}
-                    </h2>
-                    <p class="detail text-[var(--leftbt)]">${transaction.date}</p>
-                </div>
-            </div>
-        </div>`);
+        <div class="shirinkPart bg-gradient-to-br block  
+         p-2 rounded-lg shadow-lg  
+          duration-300 mb-2 relative">
+
+  <!-- 編集ボタンパート -->
+  <div class="editPart bg-[var(--editbg)]  flex flex-row justify-end 
+                p-2 z-[-1] absolute gap-2">  
+      <button class="editBt">
+          <img src="../assets/img/PencilSimple.png" alt="Edit" class="w-[25px] h-[25px] sm:w-[30px] sm:h-[30px]">
+      </button>
+      <button class="deleteBt">
+          <img src="../assets/img/Trash.png" alt="Delete" class="w-[25px] h-[25px] sm:w-[30px] sm:h-[30px]">
+      </button>
+  </div>  
+
+  <!-- トランザクション内容 -->
+  <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center justify-between px-2 sm:px-4">
+      <div class="flex items-center gap-2 sm:gap-4">
+          <div class="icon">
+              <img src="${transaction.icon || '../assets/img/Frame 667.jpg'}" 
+                   alt="icon" class="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px]">
+          </div>
+          <div class="leftbox">
+              <p class="title text-sm sm:text-base font-semibold">${transaction.description || transaction.category}</p>
+              <p class="detail text-[var(--leftbt)] text-xs sm:text-sm">${transaction.category}</p>
+          </div>
+      </div>
+
+      <div class="rightbox text-right">
+          <h2 class="text-[${transaction.type === 'income' ? 'var(--plus)' : 'var(--history)'}] text-sm sm:text-[14px] font-medium">
+              ${transaction.type === 'income' ? '+' : '-'}$${transaction.amount}
+          </h2>
+          <p class="detail text-[var(--leftbt)] text-xs sm:text-sm">${transaction.date}</p>
+      </div>
+  </div>
+</div>
+`);
                 }
 
                 // slidebyclick
