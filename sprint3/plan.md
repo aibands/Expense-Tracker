@@ -8,8 +8,8 @@ Start: 2025‑10‑20
 End: 2025‑10‑26
 
 ## Roles (Rotate each sprint)
-- Product Owner: Daiki
-- Scrum Master: Aiya
+- Product Owner: Gustabo
+- Scrum Master: Daiki
 - Developers: Aiya, Daiki, Gustavo
 
 ## Selected Stories (from Product Backlog)
@@ -26,12 +26,12 @@ End: 2025‑10‑26
 | Story ID | Task | Owner | Estimate | Status (To‑Do/In‑Progress/Review/Done) |
 |---|---|---|---|---|
 | 1 | Design responsive layout | Aiya | 1 day | Done |
-| 1 | Implement responsive coding | Aiya | 2 days | In-Progress |
-| 2 | Shrink container implementation | Daiki | 2 days | In-Progress |
-| 3 | Fix linking Category → Add Transaction | Aiya | 1 day | In-Progress |
-| 4 | Connect progress bar and alerts | Gustavo | 2 days | In-Progress |
-| 5 | Test all page functions | Gustavo | 1 day | To-Do |
-| 6 | Remove redundant functions | Daiki | 1 day | To-Do |
+| 1 | Implement responsive coding | Aiya | 2 days | Done|
+| 2 | Shrink container implementation | Daiki | 2 days | Done |
+| 3 | Fix linking Category → Add Transaction | Aiya | 1 day | Done |
+| 4 | Connect progress bar and alerts | Gustavo | 2 days | Done |
+| 5 | Test all page functions | Gustavo | 1 day | Done |
+| 6 | Remove redundant functions | Daiki | 1 day | Done |
 
 ## Definition of Done (reference)
 - Pages are fully responsive on desktop and mobile
