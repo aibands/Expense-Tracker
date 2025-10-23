@@ -29,6 +29,7 @@ These pages are mainly for design and interaction previews — some functionalit
 **Pages:**
 - Notification page – preview of alert design
 - Setting page – preview of user settings layout
+- Categories Expense - preview of overall expense in each categories
   
 ## How to Run
 1. Clone or download this repository.
