@@ -112,8 +112,28 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-<body>
-    <main>
+<body class="lg:flex">
+    <nav class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700
+        lg:static lg:flex-col lg:w-20 lg:h-screen lg:justify-start lg:gap-8 lg:border-t-0 lg:border-r lg:border-gray-700">
+        <button class="flex flex-col items-center lg:mt-4" id="home">
+            <img src="../assets/logo/default_home.svg" alt="home" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="receipt">
+            <img src="../assets/logo/active_transaction.svg" alt="note" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="open-form">
+            <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="category">
+            <img src="../assets/logo/default_categories.svg" alt="grid" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="openSettings">
+            <img src="../assets/logo/default_setting.svg" alt="settings" class="w-6 h-6">
+        </button>
+    </nav>
+
+    <main class="flex-1 lg:ml-20 px-4 sm:px-6 py-10 flex justify-center">
+        
         <section class=" min-h-screen flex flex-col items-center w-[100%] gap-[30px] bg-[var(--bg)] pb-[5.4rem]"
             style=" color:white; padding-top: 3rem; ">
 
@@ -219,10 +239,10 @@
   <div class="editPart bg-[var(--editbg)]  flex flex-row justify-end 
                 p-2 z-[-1] absolute gap-2">  
       <button class="editBt">
-          <img src="../assets/img/PencilSimple.png" alt="Edit" class="w-[25px] h-[25px] sm:w-[30px] sm:h-[30px]">
+          <img src="../assets/logo/pencil.svg" alt="Edit" class="w-[25px] h-[25px] sm:w-[30px] sm:h-[30px]">
       </button>
       <button class="deleteBt">
-          <img src="../assets/img/Trash.png" alt="Delete" class="w-[25px] h-[25px] sm:w-[30px] sm:h-[30px]">
+          <img src="../assets/logo/Trash.svg" alt="Delete" class="w-[25px] h-[25px] sm:w-[30px] sm:h-[30px]">
       </button>
   </div>  
 
@@ -230,8 +250,9 @@
   <div class="bg-[var(--card)] text-white rounded-lg flex flex-row items-center justify-between px-2 sm:px-4">
       <div class="flex items-center gap-2 sm:gap-4">
           <div class="icon">
-              <img src="${transaction.icon || '../assets/img/Frame 667.jpg'}" 
-                   alt="icon" class="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px]">
+                <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-[${categoriaInfo.color}]">
+                    <p class="text-[20px]">${categoriaInfo.emoji}</p>
+                </div>
           </div>
           <div class="leftbox">
               <p class="title text-sm sm:text-base font-semibold">${transaction.description || transaction.category}</p>
