@@ -35,9 +35,9 @@ End: 2025‑10‑12
 | 4 | design Categories page | Aiya | 1hour| Done |
 | 4 | building Categories page | Daiki | 2hour| Done |
 | 5 | design Notification page | Aiya | 1hour| Done |
-| 5 | building Notication page | Daiki | 2hour| To‑Do |
+| 5 | building Notication page | Daiki | 2hour| Done |
 | 6 | design setting page | Aiya | 1hour| Done |
-| 6 | building setting page | Aiya | 2hour| To‑Do |
+| 6 | building setting page | Aiya | 2hour| Done |
 
 ## Definition of Done (reference)
 - Finished all the design for all page
