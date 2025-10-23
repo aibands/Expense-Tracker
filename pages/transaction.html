@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=390, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transaction (390px)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -18,11 +18,13 @@
             --leftbt: #9598A9;
             --plus: #528E2F;
             --editbg: #1B546C;
-        }
-
-        h1 {
-            font-family: 'poppins', sans-serif;
-            font-weight: 700;
+            --food: #EB84AF;
+            --food: #EB84AF;
+            --transportation: #C38D5D;
+            --entertainment: #C29BEE;
+            --rent: #2899F4;
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg);
         }
 
         .icon {
@@ -32,20 +34,13 @@
             margin: 20px 10px;
         }
 
-        .leftbox {
-            font-family: 'Urbanist', sans-serif;
-        }
-
         .title {
-            font-family: 'Urbanist', sans-serif;
             font-weight: 400;
             line-height: 150%;
             font-size: 14px;
         }
 
         .rightbox {
-            font-family: 'Urbanist', sans-serif;
-            font-weight: 300;
             margin-left: auto;
             margin-right: 10px;
             text-align: right;
@@ -54,7 +49,6 @@
         .detail {
             font-size: 12px;
             font-weight: 400;
-
         }
 
         .editPart {
@@ -126,8 +120,6 @@
             <!-- Title -->
             <div class="flex flex-row mb-[1.5rem] relative sm:w-[350px] lg:w-[900px]">
                 <h1 class="text-[20px] font-bold mx-auto">Transaction</h1>
-                <img class="w-[28px] h-[28px] absolute right-0 top-0" src="../assets/img/PencilSimple.png" alt=""
-                    id="edit-form">
             </div>
 
             <!-- Cards -->
@@ -144,26 +136,6 @@
             </div>
 
         </section>
-
-
-        <nav
-            class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
-            <button class="flex flex-col items-center" id="home">
-                <img src="../assets/logo/default_home.svg" alt="home" class="w-5 h-5">
-            </button>
-            <button class="flex flex-col items-center" id="receipt">
-                <img src="../assets/logo/export_transaction.svg" alt="note" class="w-5 h-5">
-            </button>
-            <button class="flex flex-col items-center" id="open-form">
-                <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
-            </button>
-            <button class="flex flex-col items-center" id="category">
-                <img src="../assets/logo/default_categories.svg" alt="grid" class="w-5 h-5">
-            </button>
-            <button class="flex flex-col items-center" id="openSettings">
-                <img src="../assets/logo/default_setting.svg" alt="settings" class="w-5 h-5">
-            </button>
-        </nav>
 
     </main>
 
@@ -221,19 +193,23 @@
             </div>
         </div>
 
-
-
-
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(document).ready(function () {
 
                 const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+                const categories = JSON.parse(localStorage.getItem('categories')) || [];
                 let currentEditIndex = null;
                 let lastFocusedButton = null;
 
                 // cards
                 for (let transaction of transactions) {
+
+                    const categoriaInfo = categories.find(cat => cat.name === transaction.category);
+                    if(categoriaInfo.color){
+                        categoriaInfo.color = categoriaInfo.color.replace(/\s+/g, '');
+                    }
+                    
                     $('#cards').append(`
         <div class="shirinkPart bg-gradient-to-br block  
          p-2 rounded-lg shadow-lg  
@@ -286,15 +262,11 @@
                     e.stopPropagation();
                     const card = $(this).closest('.shirinkPart');
                     currentEditIndex = card.index();
-                    lastFocusedButton = this;
-
+            
                     const t = transactions[currentEditIndex];
-                    $('#editDescription').val(t.description || '');
-                    $('#editCategory').val(t.category || '');
-                    $('#editAmount').val(t.amount || '');
-
-                    $('#editModal').removeClass('hidden').addClass('flex');
-                    $('#editDescription').focus();
+                    if(t.id){
+                        window.location.href = `./saveTransaction.html?transactionId=${t.id}`
+                    }
                 });
 
                 // save
@@ -361,9 +333,6 @@
                     deleteIndex = null;
                     $('#deleteModal').addClass('hidden').removeClass('flex');
                 });
-
-
-
 
 
             });

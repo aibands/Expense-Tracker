@@ -28,7 +28,7 @@ function getFilteredTransactions(period) {
 
     if (period === 'week') {
         const startOfWeek = new Date(now);
-        startOfWeek.setDate(now.getDate() - 1);
+        startOfWeek.setDate(now.getDate());
         const endOfWeek = new Date(startOfWeek);
         endOfWeek.setDate(startOfWeek.getDate() + 6);
 
@@ -148,9 +148,9 @@ function setInitialCategories(){ // Categories
     
     categories = JSON.parse(localStorage.getItem("categories") || "[]");
     let initialCat = [
-        {emoji: "🏠", name: "Rent", budget: "", spent: 0},
-        {emoji: "🍔", name: "Food", budget: "", spent: 0},
-        {emoji: "🚋", name: "Transportation", budget: "", spent: 0},
+        {emoji: "🏠", name: "Rent", budget: "2500", color: "rgb(240, 169, 169, 1)", spent: 0},
+        {emoji: "🍔", name: "Food", budget: "600", color: "rgb(11, 9, 19, 1)", spent: 0},
+        {emoji: "🚋", name: "Transportation", budget: "150", color: "rgb(2, 169, 1, 1)", spent: 0},
     ]
 
     if (categories.length === 0){

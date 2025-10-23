@@ -32,8 +32,28 @@
     </style>
 </head>
 
-<body>
-    <main>
+<body class="flex">
+
+    <nav class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700
+    lg:static lg:flex-col lg:w-20 lg:h-screen lg:justify-start lg:gap-8 lg:border-t-0 lg:border-r lg:border-gray-700">
+        <button class="flex flex-col items-center lg:mt-4" id="home">
+            <img src="../assets/logo/default_home.svg" alt="home" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="receipt">
+            <img src="../assets/logo/default_transaction.svg" alt="note" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="open-form">
+            <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="category">
+            <img src="../assets/logo/active_categories.svg" alt="grid" class="w-6 h-6">
+        </button>
+        <button class="flex flex-col items-center" id="openSettings">
+            <img src="../assets/logo/default_setting.svg" alt="settings" class="w-6 h-6">
+        </button>
+    </nav>
+
+    <main class="flex-1 lg:ml-24 px-8 py-10">
         <!-- Title -->
         <div class="flex flex-row p-10">
             <h1 class="text-[16px] font-bold mx-auto text-[var(--white)]">Categories</h1>
@@ -43,106 +63,10 @@
 
         <!-- body -->
         <div class="flex flex-col justify-center items-center px-10">
-            <!-- pie chart section -->
-            <div class="w-full rounded-lg bg-[var(--card)] text-[var(--white)] p-5">
-                <p> Monthly spending </p>
-                <!-- pie -->
-                <div class="flex items-center justify-center gap-8 mt-4">
-                    <canvas id="spendingChart" class="w-[160px] h-[160px]"></canvas>
-
-                    <div class="text-[var-(--white)] space-y-2">
-                        <ul class="space-y-1 text-[12px]">
-                            <li class="flex items-center gap-2">
-                                <span class="inline-block w-2 h-2 bg-[var(--rent)] rounded-full"></span>
-                                Rent <span class="ml-1 font-semibold">95%</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="inline-block w-2 h-2 bg-[var(--food)] rounded-full"></span>
-                                Food <span class="ml-1 font-semibold">3%</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="inline-block w-2 h-2 bg-[var(--transportation)] rounded-full"></span>
-                                Transportation <span class="ml-1 font-semibold">2%</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
             <!-- for new categoreis -->
             <div id="categoriesContainer" class="flex flex-col justify-center items-center w-full mt-2"></div>
 
             <div class="flex flex-col justify-center items-center w-full" id="rent">
-                <!-- rent -->
-                <div class="bg-[var(--card)] w-full p-5 mt-4 mb-2 rounded-lg">
-                    <p class="text-[14px] font-regular text-[var(--white)] categories">🏠 Rent</p>
-                    <p class="text-[14px] font-bold text-[var(--white)] spent">$0 left</p>
-                    <div class="mt-8 flex flex-col items-end gap-1">
-                        <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $1000</p>
-                        <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
-                            <div class="h-[14px] bg-[var(--rent)] rounded-full w-[0%]"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col justify-center items-center w-full id=food">
-                    <!-- Food -->
-                    <div class="bg-[var(--card)] w-full p-5 my-2 rounded-lg">
-                        <p class="text-[14px] font-regular text-[var(--white)] categories">🥩 Food</p>
-                        <p class="text-[14px] font-bold text-[var(--white)] spent">$150 left</p>
-                        <div class="mt-8 flex flex-col items-end gap-1">
-                            <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $200</p>
-                            <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
-                                <div class="h-[14px] bg-[var(--food)] rounded-full w-[75%]"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col justify-center items-center w-full" id="transportation">
-                        <!-- Transportation -->
-                        <div class="bg-[var(--card)] w-full p-5 my-2 rounded-lg">
-                            <p class="text-[14px] font-regular text-[var(--white)] categories">🚅 Transportation</p>
-                            <p class="text-[14px] font-bold text-[var(--white)] spent">$100 left</p>
-                            <div class="mt-8 flex flex-col items-end gap-1">
-                                <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $120</p>
-                                <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
-                                    <div class="h-[14px] bg-[var(--transportation)] rounded-full w-[92%]"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col justify-center items-center w-full" id="entertainment">
-                            <!-- Entertainment -->
-                            <div class="bg-[var(--card)] w-full p-5 my-2 rounded-lg">
-                                <p class="text-[14px] font-regular text-[var(--white)] categories">🎶 Entertainment</p>
-                                <p class="text-[14px] font-bold text-[var(--white)] spent">$100 left</p>
-                                <div class="mt-8 flex flex-col items-end gap-1">
-                                    <p class="text-[12px] font-regular text-[var(--grey)] budget">budget $100</p>
-                                    <div class="w-full h-[14px] bg-[var(--white)] rounded-full">
-                                        <div class="h-[14px] bg-[var(--entertainment)] rounded-full w-[100%]"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- nav bar -->
-                            <nav
-                                class="fixed bottom-0 left-0 w-full bg-[var(--card)] flex justify-around items-center py-3 border-t border-gray-700">
-                                <button class="flex flex-col items-center" id="home">
-                                    <img src="../assets/logo/default_home.svg" alt="home" class="w-5 h-5">
-                                </button>
-                                <button class="flex flex-col items-center" id="receipt">
-                                    <img src="../assets/logo/default_transaction.svg" alt="note" class="w-5 h-5">
-                                </button>
-                                <button class="flex flex-col items-center" id="open-form">
-                                    <img src="../assets/logo/default_add.svg" alt="plus" class="w-6 h-6">
-                                </button>
-                                <button class="flex flex-col items-center" id="category">
-                                    <img src="../assets/logo/active_categories.svg" alt="grid" class="w-5 h-5">
-                                </button>
-                                <button class="flex flex-col items-center" id="openSettings">
-                                    <img src="../assets/logo/default_setting.svg" alt="settings" class="w-5 h-5">
-                                </button>
-                            </nav>
     </main>
 
     <script>
