@@ -28,7 +28,7 @@ function getFilteredTransactions(period) {
 
     if (period === 'week') {
         const startOfWeek = new Date(now);
-        startOfWeek.setDate(now.getDate());
+        startOfWeek.setDate(now.getDate() - 6);
         const endOfWeek = new Date(startOfWeek);
         endOfWeek.setDate(startOfWeek.getDate() + 6);
 
